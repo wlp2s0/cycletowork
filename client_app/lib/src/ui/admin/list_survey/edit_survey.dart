@@ -183,7 +183,7 @@ class EditSurveyDialog {
                                       ),
                                       Text(
                                         'Aggiungi',
-                                        style: textTheme.caption!.copyWith(
+                                        style: textTheme.bodySmall!.copyWith(
                                           color: colorScheme.secondary,
                                         ),
                                       ),
@@ -206,7 +206,7 @@ class EditSurveyDialog {
                                 child: Center(
                                   child: Text(
                                     "Non hai ancora aggiungiato nessun domanda",
-                                    style: textTheme.headline5!.copyWith(
+                                    style: textTheme.headlineSmall!.copyWith(
                                       color: colorSchemeExtension.textDisabled,
                                     ),
                                     textAlign: TextAlign.center,

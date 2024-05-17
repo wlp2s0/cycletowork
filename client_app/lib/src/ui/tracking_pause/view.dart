@@ -299,7 +299,7 @@ class _TimeTracking extends StatelessWidget {
             children: [
               Text(
                 'Tempo'.toUpperCase(),
-                style: textTheme.caption!.apply(
+                style: textTheme.bodySmall!.apply(
                   color: colorSchemeExtension.textSecondary,
                 ),
               ),
@@ -316,11 +316,11 @@ class _TimeTracking extends StatelessWidget {
             children: [
               Text(
                 time,
-                style: textTheme.headline6,
+                style: textTheme.titleLarge,
               ),
               Text(
                 'h:m:s',
-                style: textTheme.caption!.apply(
+                style: textTheme.bodySmall!.apply(
                   color: colorSchemeExtension.textSecondary,
                 ),
               ),
@@ -360,7 +360,7 @@ class _Co2Tracking extends StatelessWidget {
             children: [
               Text(
                 'CO\u2082'.toUpperCase(),
-                style: textTheme.caption!.apply(
+                style: textTheme.bodySmall!.apply(
                   color: colorSchemeExtension.textSecondary,
                 ),
               ),
@@ -377,14 +377,14 @@ class _Co2Tracking extends StatelessWidget {
             children: [
               Text(
                 co2,
-                style: textTheme.headline6!.copyWith(
+                style: textTheme.titleLarge!.copyWith(
                   color: colorSchemeExtension.info,
                   fontWeight: FontWeight.w500,
                 ),
               ),
               Text(
                 measurementUnit == AppMeasurementUnit.metric ? 'Kg' : 'lb',
-                style: textTheme.caption!.apply(
+                style: textTheme.bodySmall!.apply(
                   color: colorSchemeExtension.textSecondary,
                 ),
               ),
@@ -424,7 +424,7 @@ class _DistanceTracking extends StatelessWidget {
             children: [
               Text(
                 'DISTANZA'.toUpperCase(),
-                style: textTheme.caption!.apply(
+                style: textTheme.bodySmall!.apply(
                   color: colorSchemeExtension.textSecondary,
                 ),
               ),
@@ -441,11 +441,11 @@ class _DistanceTracking extends StatelessWidget {
             children: [
               Text(
                 distance,
-                style: textTheme.headline6,
+                style: textTheme.titleLarge,
               ),
               Text(
                 measurementUnit == AppMeasurementUnit.metric ? 'km' : 'mi',
-                style: textTheme.caption!.apply(
+                style: textTheme.bodySmall!.apply(
                   color: colorSchemeExtension.textSecondary,
                 ),
               ),
@@ -485,7 +485,7 @@ class _SpeedTracking extends StatelessWidget {
             children: [
               Text(
                 'VELOCITÀ MEDIA'.toUpperCase(),
-                style: textTheme.caption!.apply(
+                style: textTheme.bodySmall!.apply(
                   color: colorSchemeExtension.textSecondary,
                 ),
               ),
@@ -502,14 +502,14 @@ class _SpeedTracking extends StatelessWidget {
             children: [
               Text(
                 avarageSpeed,
-                style: textTheme.headline6!.copyWith(
+                style: textTheme.titleLarge!.copyWith(
                   color: colorSchemeExtension.textPrimary,
                   fontWeight: FontWeight.w500,
                 ),
               ),
               Text(
                 measurementUnit == AppMeasurementUnit.metric ? 'km/h' : 'mi/h',
-                style: textTheme.caption!.apply(
+                style: textTheme.bodySmall!.apply(
                   color: colorSchemeExtension.textSecondary,
                 ),
               ),

@@ -84,7 +84,7 @@ class TrackingView extends StatelessWidget {
                 child: Center(
                   child: Text(
                     errorMessage,
-                    style: textTheme.bodyText1!.apply(
+                    style: textTheme.bodyLarge!.apply(
                       color: colorScheme.onError,
                     ),
                   ),
@@ -266,17 +266,17 @@ class _TimeTracking extends StatelessWidget {
       children: [
         Text(
           'TEMPO'.toUpperCase(),
-          style: textTheme.caption!.apply(
+          style: textTheme.bodySmall!.apply(
             color: colorSchemeExtension.textSecondary,
           ),
         ),
         Text(
           time,
-          style: textTheme.headline4,
+          style: textTheme.headlineMedium,
         ),
         Text(
           'h:m:s',
-          style: textTheme.caption!.apply(
+          style: textTheme.bodySmall!.apply(
             color: colorSchemeExtension.textSecondary,
           ),
         )
@@ -303,20 +303,20 @@ class _Co2Tracking extends StatelessWidget {
       children: [
         Text(
           'CO\u2082'.toUpperCase(),
-          style: textTheme.caption!.apply(
+          style: textTheme.bodySmall!.apply(
             color: colorSchemeExtension.textSecondary,
           ),
         ),
         Text(
           co2,
-          style: textTheme.headline1!.copyWith(
+          style: textTheme.displayLarge!.copyWith(
             color: colorSchemeExtension.info,
             fontWeight: FontWeight.w700,
           ),
         ),
         Text(
           measurementUnit == AppMeasurementUnit.metric ? 'Kg' : 'lb',
-          style: textTheme.caption!.apply(
+          style: textTheme.bodySmall!.apply(
             color: colorSchemeExtension.textSecondary,
           ),
         )
@@ -343,19 +343,19 @@ class _DistanceTracking extends StatelessWidget {
       children: [
         Text(
           'DISTANZA'.toUpperCase(),
-          style: textTheme.caption!.apply(
+          style: textTheme.bodySmall!.apply(
             color: colorSchemeExtension.textSecondary,
           ),
         ),
         Text(
           distance,
-          style: textTheme.headline2!.copyWith(
+          style: textTheme.displayMedium!.copyWith(
             fontWeight: FontWeight.w700,
           ),
         ),
         Text(
           measurementUnit == AppMeasurementUnit.metric ? 'km' : 'mi',
-          style: textTheme.caption!.apply(
+          style: textTheme.bodySmall!.apply(
             color: colorSchemeExtension.textSecondary,
           ),
         ),
@@ -387,17 +387,17 @@ class _SpeedTracking extends StatelessWidget {
           children: [
             Text(
               'VELOCITÀ'.toUpperCase(),
-              style: textTheme.caption!.apply(
+              style: textTheme.bodySmall!.apply(
                 color: colorSchemeExtension.textSecondary,
               ),
             ),
             Text(
               speed,
-              style: textTheme.headline4,
+              style: textTheme.headlineMedium,
             ),
             Text(
               measurementUnit == AppMeasurementUnit.metric ? 'km/h' : 'mi/h',
-              style: textTheme.caption!.apply(
+              style: textTheme.bodySmall!.apply(
                 color: colorSchemeExtension.textSecondary,
               ),
             ),
@@ -407,17 +407,17 @@ class _SpeedTracking extends StatelessWidget {
           children: [
             Text(
               'VELOCITÀ MEDIA'.toUpperCase(),
-              style: textTheme.caption!.apply(
+              style: textTheme.bodySmall!.apply(
                 color: colorSchemeExtension.textSecondary,
               ),
             ),
             Text(
               avarageSpeed,
-              style: textTheme.headline4,
+              style: textTheme.headlineMedium,
             ),
             Text(
               measurementUnit == AppMeasurementUnit.metric ? 'km/h' : 'mi/h',
-              style: textTheme.caption!.apply(
+              style: textTheme.bodySmall!.apply(
                 color: colorSchemeExtension.textSecondary,
               ),
             ),

@@ -50,7 +50,7 @@ class _SurveyViewState extends State<SurveyView> {
           ),
           Text(
             'Sondaggio',
-            style: textTheme.headline6,
+            style: textTheme.titleLarge,
           ),
           ListView.builder(
             physics: const ScrollPhysics(),
@@ -69,7 +69,7 @@ class _SurveyViewState extends State<SurveyView> {
                         children: [
                           TextSpan(
                             text: question.title,
-                            style: textTheme.subtitle1,
+                            style: textTheme.titleMedium,
                           ),
                           TextSpan(
                             text: question.maxAnswer > 1
@@ -77,11 +77,11 @@ class _SurveyViewState extends State<SurveyView> {
                                 : question.maxAnswer == 0
                                     ? ' Seleziona tutte le voci che desideri.'
                                     : '',
-                            style: textTheme.subtitle1,
+                            style: textTheme.titleMedium,
                           ),
                           TextSpan(
                             text: question.required ? '*' : '',
-                            style: textTheme.subtitle1,
+                            style: textTheme.titleMedium,
                           ),
                         ],
                       ),
@@ -127,7 +127,7 @@ class _SurveyViewState extends State<SurveyView> {
                                 Expanded(
                                   child: Text(
                                     answer,
-                                    style: textTheme.bodyText1,
+                                    style: textTheme.bodyLarge,
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 5,
                                   ),
@@ -174,7 +174,7 @@ class _SurveyViewState extends State<SurveyView> {
                                   Expanded(
                                     child: Text(
                                       otherString,
-                                      style: textTheme.bodyText1,
+                                      style: textTheme.bodyLarge,
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 5,
                                     ),
@@ -270,7 +270,7 @@ class _SurveyViewState extends State<SurveyView> {
                   ),
                   child: Text(
                     'SALVA',
-                    style: textTheme.bodyText2!.copyWith(
+                    style: textTheme.bodyMedium!.copyWith(
                       color: colorScheme.onSecondary,
                     ),
                   ),

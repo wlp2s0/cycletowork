@@ -142,7 +142,7 @@ class DashboardView extends StatelessWidget {
                                     ? 'LA TUA NUOVA ATTIVITÀ È STATA SALVATA!'
                                     : 'NON È STATO POSSIBILE SALVARE LA TUA NUOVA ATTIVITÀ.\nLA TUA NUOVA ATTIVITÀ È STATA SALVATA SOLO SUL DISPOSITIVO. PER REGISTRARLA CORRETTAMENTE DEVI INVIARLA NUOVAMENTE DALLA SEZIONE "ATTIVITÀ".'
                                         .toUpperCase(),
-                                style: textTheme.caption!.apply(
+                                style: textTheme.bodySmall!.apply(
                                   color: colorScheme.onError,
                                 ),
                                 overflow: TextOverflow.ellipsis,
@@ -337,7 +337,7 @@ class DashboardView extends StatelessWidget {
                 ),
                 Text(
                   'A cosa ci serve sapere la tua posizione:',
-                  style: textTheme.headline5,
+                  style: textTheme.headlineSmall,
                 ),
                 SizedBox(
                   height: 60 * scale,
@@ -355,7 +355,7 @@ class DashboardView extends StatelessWidget {
                     Expanded(
                       child: Text(
                         'Per funzionare correttamente, devi consentire a Cycle2Work di rilevare la tua posizione per registrare il percorso che hai effettuato in bicicletta e calcolare quindi la quantità di CO\u2082 che hai risparmiato.',
-                        style: textTheme.bodyText1,
+                        style: textTheme.bodyLarge,
                         maxLines: 6,
                       ),
                     ),
@@ -384,7 +384,7 @@ class DashboardView extends StatelessWidget {
                   ),
                   child: Text(
                     'ACCETTO'.toUpperCase(),
-                    style: textTheme.button!.copyWith(
+                    style: textTheme.labelLarge!.copyWith(
                       color: colorScheme.onSecondary,
                     ),
                   ),
@@ -509,7 +509,7 @@ class DashboardView extends StatelessWidget {
                 ),
                 Text(
                   'Perché vogliamo avere le informazioni relative alle tue attività:',
-                  style: textTheme.headline5,
+                  style: textTheme.headlineSmall,
                 ),
                 SizedBox(
                   height: 60 * scale,
@@ -527,7 +527,7 @@ class DashboardView extends StatelessWidget {
                     Expanded(
                       child: Text(
                         'Per funzionare correttamente, devi consentire a Cycle2Work di accedere alle informazioni relative alle tue attività. In questo modo potrà verificare le attività che hai effettuato e confrontarle con quella che stai svolgendo per migliorare i parametri di misurazione.',
-                        style: textTheme.bodyText1,
+                        style: textTheme.bodyLarge,
                         maxLines: 6,
                       ),
                     ),
@@ -556,7 +556,7 @@ class DashboardView extends StatelessWidget {
                   ),
                   child: Text(
                     'ACCETTO'.toUpperCase(),
-                    style: textTheme.button!.copyWith(
+                    style: textTheme.labelLarge!.copyWith(
                       color: colorScheme.onSecondary,
                     ),
                   ),

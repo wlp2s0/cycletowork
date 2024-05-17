@@ -58,11 +58,11 @@ class AppAlartDialog {
         BorderRadius.all(
           Radius.circular(radius),
         );
-    titleStyle = titleStyle ?? textTheme.headline6;
-    subtitleStyle = subtitleStyle ?? textTheme.bodyText1;
-    bodyStyle = bodyStyle ?? textTheme.bodyText2;
+    titleStyle = titleStyle ?? textTheme.titleLarge;
+    subtitleStyle = subtitleStyle ?? textTheme.bodyLarge;
+    bodyStyle = bodyStyle ?? textTheme.bodyMedium;
     confirmLabelStyle = confirmLabelStyle ??
-        textTheme.caption!.copyWith(
+        textTheme.bodySmall!.copyWith(
           color: iscConfirmDestructiveAction ? colorScheme.error : color,
         );
 
@@ -77,7 +77,7 @@ class AppAlartDialog {
         );
 
     cancelLabelStyle = cancelLabelStyle ??
-        textTheme.caption!.copyWith(
+        textTheme.bodySmall!.copyWith(
           color: iscCancelDestructiveAction ? colorScheme.error : color,
         );
 

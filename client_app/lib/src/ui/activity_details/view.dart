@@ -178,7 +178,7 @@ class _ActivityDetailsViewState extends State<ActivityDetailsView> {
                 //                         ? 'LA TUA ATTIVITÀ È STATA SALVATA!'
                 //                         : 'PURTROPPO LA TUA ATTIVITÀ NON È STATA SALVATA!'
                 //                             .toUpperCase(),
-                //                     style: textTheme.caption!.apply(
+                //                     style: textTheme.bodySmall!.apply(
                 //                       color: colorScheme.onError,
                 //                     ),
                 //                     overflow: TextOverflow.ellipsis,
@@ -245,7 +245,7 @@ class _ActivityDetailsViewState extends State<ActivityDetailsView> {
                                         ? 'LA TUA NUOVA ATTIVITÀ È STATA SALVATA!'
                                         : 'PURTROPPO LA TUA NUOVA ATTIVITÀ NON È STATA SALVATA!'
                                             .toUpperCase(),
-                                    style: textTheme.caption!.apply(
+                                    style: textTheme.bodySmall!.apply(
                                       color: colorScheme.onError,
                                     ),
                                     overflow: TextOverflow.ellipsis,
@@ -284,11 +284,11 @@ class _ActivityDetailsViewState extends State<ActivityDetailsView> {
                       'dd MMMM yyyy, HH:mm',
                       appLocale.languageCode,
                     ).format(endTrackingDate),
-                    style: textTheme.headline6,
+                    style: textTheme.titleLarge,
                   ),
                   Text(
                     city ?? '',
-                    style: textTheme.bodyText1!.apply(
+                    style: textTheme.bodyLarge!.apply(
                       color: colorSchemeExtension.textSecondary,
                     ),
                   ),
@@ -315,7 +315,7 @@ class _ActivityDetailsViewState extends State<ActivityDetailsView> {
                         ),
                         Text(
                           numberFormat.format(trackingCo2),
-                          style: textTheme.headline4!.copyWith(
+                          style: textTheme.headlineMedium!.copyWith(
                             color: colorScheme.onSecondary,
                             fontWeight: FontWeight.w400,
                           ),
@@ -325,7 +325,7 @@ class _ActivityDetailsViewState extends State<ActivityDetailsView> {
                         ),
                         Text(
                           '${measurementUnit == AppMeasurementUnit.metric ? 'Kg' : 'lb'} CO\u2082',
-                          style: textTheme.headline4!.copyWith(
+                          style: textTheme.headlineMedium!.copyWith(
                             color: colorScheme.onSecondary,
                             fontWeight: FontWeight.w400,
                           ),
@@ -513,7 +513,7 @@ class _ActivityDetailsViewState extends State<ActivityDetailsView> {
                   ),
                   Text(
                     'Velocità (${measurementUnit == AppMeasurementUnit.metric ? 'km/h' : 'mi/h'})',
-                    style: textTheme.caption,
+                    style: textTheme.bodySmall,
                   ),
                   Chart(
                     type: ChartType.speed,
@@ -536,7 +536,7 @@ class _ActivityDetailsViewState extends State<ActivityDetailsView> {
                   ),
                   Text(
                     'Quota (${measurementUnit == AppMeasurementUnit.metric ? 'm' : 'ft'})',
-                    style: textTheme.caption,
+                    style: textTheme.bodySmall,
                   ),
                   Chart(
                     type: ChartType.altitude,
@@ -655,7 +655,7 @@ class _Item extends StatelessWidget {
             ),
             title: Text(
               title,
-              style: textTheme.caption!.copyWith(
+              style: textTheme.bodySmall!.copyWith(
                 fontWeight: FontWeight.w400,
                 color: colorSchemeExtension.textSecondary,
               ),
@@ -665,7 +665,7 @@ class _Item extends StatelessWidget {
               children: [
                 Text(
                   value,
-                  style: textTheme.headline6!.copyWith(
+                  style: textTheme.titleLarge!.copyWith(
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -674,7 +674,7 @@ class _Item extends StatelessWidget {
                 ),
                 Text(
                   unit ?? '',
-                  style: textTheme.caption!.copyWith(
+                  style: textTheme.bodySmall!.copyWith(
                     fontWeight: FontWeight.w400,
                     color: colorSchemeExtension.textSecondary,
                   ),

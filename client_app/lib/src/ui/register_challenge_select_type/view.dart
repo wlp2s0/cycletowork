@@ -46,14 +46,14 @@ class RegisterChallengSelectTypeView extends StatelessWidget {
             children: [
               Text(
                 'Iscriviti alla',
-                style: textTheme.headline6!.copyWith(
+                style: textTheme.titleLarge!.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.center,
               ),
               Text(
                 challengeName.toUpperCase(),
-                style: textTheme.headline6!.copyWith(
+                style: textTheme.titleLarge!.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.center,
@@ -72,7 +72,7 @@ class RegisterChallengSelectTypeView extends StatelessWidget {
               ),
               Text(
                 'Come ciclista, potrai sempre tracciare le tue attività personali. Se vuoi partecipare alla Bike Challenge e vedere le classifiche, seleziona la tua azienda nella prossima schermata.',
-                style: textTheme.caption!.copyWith(
+                style: textTheme.bodySmall!.copyWith(
                   fontWeight: FontWeight.w400,
                 ),
                 textAlign: TextAlign.start,
@@ -101,7 +101,7 @@ class RegisterChallengSelectTypeView extends StatelessWidget {
                     children: [
                       Text(
                         'ISCRIVITI come ciclista'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: colorScheme.onSecondary,
                         ),
                       ),
@@ -142,7 +142,7 @@ class RegisterChallengSelectTypeView extends StatelessWidget {
                     TextSpan(
                       text:
                           'Registra la tua azienda alla Bike Challenge e diventane il champion. Sarai il punto di riferimento per tutti i tuoi colleghi.',
-                      style: textTheme.caption!.copyWith(
+                      style: textTheme.bodySmall!.copyWith(
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -194,7 +194,7 @@ class RegisterChallengSelectTypeView extends StatelessWidget {
                     children: [
                       Text(
                         'ISCRIVI la tua azienda'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: colorScheme.onSecondary,
                         ),
                       ),

@@ -33,7 +33,7 @@ class AppSelectionDialog {
           Radius.circular(radius),
         );
     labelStyle = labelStyle ??
-        textTheme.bodyText1!.copyWith(
+        textTheme.bodyLarge!.copyWith(
           color: color,
         );
 

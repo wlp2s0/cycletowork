@@ -70,7 +70,7 @@ class _AdminDashboardViewState extends State<AdminDashboardView> {
                             ),
                             Text(
                               viewModel.uiState.errorMessage.toUpperCase(),
-                              style: textTheme.button!.apply(
+                              style: textTheme.labelLarge!.apply(
                                 color: colorScheme.onError,
                               ),
                             ),
@@ -88,7 +88,7 @@ class _AdminDashboardViewState extends State<AdminDashboardView> {
             appBar: AppBar(
               title: Text(
                 'Pannello Admin',
-                style: textTheme.headline5,
+                style: textTheme.headlineSmall,
               ),
               centerTitle: true,
               actions: [

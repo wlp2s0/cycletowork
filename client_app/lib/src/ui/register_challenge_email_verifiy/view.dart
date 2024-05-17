@@ -73,7 +73,7 @@ class _RegisterChallengEmailVerifyViewState
                   ),
                   child: Text(
                     'Ti abbiamo inviato una email di verifica all’indirizzo',
-                    style: textTheme.bodyText1!.copyWith(
+                    style: textTheme.bodyLarge!.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.center,
@@ -86,7 +86,7 @@ class _RegisterChallengEmailVerifyViewState
                   ),
                   child: Text(
                     businessEmail,
-                    style: textTheme.bodyText1!.copyWith(
+                    style: textTheme.bodyLarge!.copyWith(
                       fontWeight: FontWeight.w700,
                     ),
                     textAlign: TextAlign.center,
@@ -112,7 +112,7 @@ class _RegisterChallengEmailVerifyViewState
                         : null,
                     child: Text(
                       'Invia di nuovo'.toUpperCase(),
-                      style: textTheme.caption!.copyWith(
+                      style: textTheme.bodySmall!.copyWith(
                         color: !emailIsVerified
                             ? colorScheme.secondary
                             : colorSchemeExtension.textDisabled
@@ -134,7 +134,7 @@ class _RegisterChallengEmailVerifyViewState
                       ? Center(
                           child: Text(
                             'Grazie per aver confermato il tuo indirizzo email',
-                            style: textTheme.headline6!.copyWith(
+                            style: textTheme.titleLarge!.copyWith(
                               fontWeight: FontWeight.w500,
                               color: colorSchemeExtension.success,
                             ),
@@ -163,7 +163,7 @@ class _RegisterChallengEmailVerifyViewState
                   ),
                   child: Text(
                     'Se non hai ricevuto nessuna email, verifica la correttezza dell’indirizzo che hai fornito e nel caso sia errato torna indietro a correggerlo.',
-                    style: textTheme.caption!.copyWith(
+                    style: textTheme.bodySmall!.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.center,
@@ -176,7 +176,7 @@ class _RegisterChallengEmailVerifyViewState
                   ),
                   child: Text(
                     'Controlla anche che la nostra email non sia finita nella posta indesiderata.',
-                    style: textTheme.caption!.copyWith(
+                    style: textTheme.bodySmall!.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.center,
@@ -208,7 +208,7 @@ class _RegisterChallengEmailVerifyViewState
                       ),
                       child: AutoSizeText(
                         'Prosegui'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: emailIsVerified
                               ? colorScheme.onSecondary
                               : colorSchemeExtension.textDisabled,
@@ -253,7 +253,7 @@ class _RegisterChallengEmailVerifyViewState
                       ),
                       child: AutoSizeText(
                         'Torna indietro'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: !emailIsVerified
                               ? colorScheme.secondary
                               : colorSchemeExtension.textDisabled,

@@ -58,7 +58,7 @@ class _AdminListChallengeViewState extends State<AdminListChallengeView>
           ),
           title: Text(
             'Challenge',
-            style: textTheme.headline6,
+            style: textTheme.titleLarge,
           ),
         ),
         body: const Center(
@@ -78,7 +78,7 @@ class _AdminListChallengeViewState extends State<AdminListChallengeView>
         ),
         title: Text(
           'Challenge',
-          style: textTheme.headline6,
+          style: textTheme.titleLarge,
         ),
         actions: [
           TextButton.icon(

@@ -33,7 +33,7 @@ class TrackingCounterView extends StatelessWidget {
       body: Center(
         child: Text(
           counter != 0 ? counter.toString() : 'VAI!',
-          style: textTheme.headline1!.copyWith(
+          style: textTheme.displayLarge!.copyWith(
             color: color,
             fontSize: 128.0 * scale,
             fontWeight: FontWeight.w900,
@@ -66,7 +66,7 @@ class TrackingCounterView extends StatelessWidget {
             ),
             Text(
               'Ritarda 10”'.toUpperCase(),
-              style: textTheme.caption!.apply(
+              style: textTheme.bodySmall!.apply(
                 color: actionColor,
               ),
             ),
@@ -77,7 +77,7 @@ class TrackingCounterView extends StatelessWidget {
           children: [
             Text(
               'Parti subito'.toUpperCase(),
-              style: textTheme.caption!.apply(
+              style: textTheme.bodySmall!.apply(
                 color: actionColor,
               ),
             ),

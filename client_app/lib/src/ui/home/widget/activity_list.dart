@@ -58,7 +58,7 @@ class ActivityList extends StatelessWidget {
               listChallengeActive.isEmpty
                   ? 'Ultime attività'
                   : 'Nuova Challenge!',
-              style: Theme.of(context).textTheme.caption!.apply(
+              style: Theme.of(context).textTheme.bodySmall!.apply(
                     color: textSecondaryColor,
                   ),
             ),
@@ -199,7 +199,7 @@ class _NewChallengeCard extends StatelessWidget {
                     title,
                     textAlign: TextAlign.end,
                     maxLines: 2,
-                    style: textTheme.button!.copyWith(
+                    style: textTheme.labelLarge!.copyWith(
                       color: colorScheme.secondary,
                       fontWeight: FontWeight.w500,
                     ),
@@ -328,7 +328,7 @@ class _ActivityCard extends StatelessWidget {
                                 co2,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .bodyText1!
+                                    .bodyLarge!
                                     .copyWith(
                                       color: infoColor,
                                       fontWeight: FontWeight.w700,
@@ -338,7 +338,7 @@ class _ActivityCard extends StatelessWidget {
                           ),
                           Text(
                             date,
-                            style: Theme.of(context).textTheme.caption,
+                            style: Theme.of(context).textTheme.bodySmall,
                           ),
                           SizedBox(
                             width: 210 * scale,
@@ -346,7 +346,7 @@ class _ActivityCard extends StatelessWidget {
                               more,
                               overflow: TextOverflow.ellipsis,
                               style:
-                                  Theme.of(context).textTheme.bodyText2!.apply(
+                                  Theme.of(context).textTheme.bodyMedium!.apply(
                                         color: textSecondaryColor,
                                       ),
                             ),

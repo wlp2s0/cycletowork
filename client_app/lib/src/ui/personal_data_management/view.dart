@@ -37,7 +37,7 @@ class PersonalDataManagementView extends StatelessWidget {
                             Expanded(
                               child: Text(
                                 viewModel.uiState.errorMessage.toUpperCase(),
-                                style: textTheme.caption!.apply(
+                                style: textTheme.bodySmall!.apply(
                                   color: colorScheme.onError,
                                 ),
                                 overflow: TextOverflow.ellipsis,
@@ -68,7 +68,7 @@ class PersonalDataManagementView extends StatelessWidget {
               centerTitle: true,
               title: Text(
                 'Cancellazione Account',
-                style: textTheme.bodyText1,
+                style: textTheme.bodyLarge,
               ),
               leading: IconButton(
                 splashRadius: 25.0,
@@ -90,7 +90,7 @@ class PersonalDataManagementView extends StatelessWidget {
                   ),
                   Text(
                     'Cancellazione account e dati',
-                    style: textTheme.headline6!.copyWith(
+                    style: textTheme.titleLarge!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -99,7 +99,7 @@ class PersonalDataManagementView extends StatelessWidget {
                   ),
                   Text(
                     'Stai per cancellare il tuo account. Proseguendo cancellerai anche tutte le informazioni relative al tuo profilo è alle tue attività.',
-                    style: textTheme.bodyText2!.copyWith(
+                    style: textTheme.bodyMedium!.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
                     maxLines: 20,
@@ -109,7 +109,7 @@ class PersonalDataManagementView extends StatelessWidget {
                   ),
                   Text(
                     'L’eliminazione è un’azione permanente e irreversibile.',
-                    style: textTheme.bodyText2!.copyWith(
+                    style: textTheme.bodyMedium!.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
                     maxLines: 20,
@@ -156,7 +156,7 @@ class PersonalDataManagementView extends StatelessWidget {
                         ),
                         child: Text(
                           'Elimina account'.toUpperCase(),
-                          style: textTheme.button!.copyWith(
+                          style: textTheme.labelLarge!.copyWith(
                             color: colorScheme.onSecondary,
                           ),
                         ),

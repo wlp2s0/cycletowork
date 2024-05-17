@@ -64,7 +64,7 @@ class ConfirmChallengeDialog {
                       ),
                       Text(
                         'Iscriviti alla',
-                        style: textTheme.bodyText1!.copyWith(
+                        style: textTheme.bodyLarge!.copyWith(
                           color: colorScheme.secondary,
                           fontWeight: FontWeight.w700,
                         ),
@@ -76,7 +76,7 @@ class ConfirmChallengeDialog {
                         margin: EdgeInsets.symmetric(horizontal: 10.0 * scale),
                         child: Text(
                           title,
-                          style: textTheme.headline6!.copyWith(
+                          style: textTheme.titleLarge!.copyWith(
                             color: colorScheme.secondary,
                             fontWeight: FontWeight.w700,
                           ),
@@ -88,7 +88,7 @@ class ConfirmChallengeDialog {
                       ),
                       Text(
                         'di FIAB',
-                        style: textTheme.subtitle1!.copyWith(
+                        style: textTheme.titleMedium!.copyWith(
                           color: colorScheme.secondary,
                           fontWeight: FontWeight.w700,
                         ),
@@ -115,7 +115,7 @@ class ConfirmChallengeDialog {
                           ),
                           child: AutoSizeText(
                             confirmButton,
-                            style: textTheme.button!.copyWith(
+                            style: textTheme.labelLarge!.copyWith(
                               color: colorScheme.onSecondary,
                             ),
                             maxLines: 1,
@@ -144,7 +144,7 @@ class ConfirmChallengeDialog {
                           ),
                           child: AutoSizeText(
                             cancelButton,
-                            style: textTheme.button!.copyWith(
+                            style: textTheme.labelLarge!.copyWith(
                               color: colorScheme.secondary,
                             ),
                             maxLines: 1,

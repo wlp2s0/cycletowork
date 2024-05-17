@@ -35,7 +35,7 @@ class AdminLandingView extends StatelessWidget {
                               ),
                               Text(
                                 viewModel.uiState.errorMessage.toUpperCase(),
-                                style: textTheme.button!.apply(
+                                style: textTheme.labelLarge!.apply(
                                   color: colorScheme.onError,
                                 ),
                               ),

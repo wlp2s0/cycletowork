@@ -39,7 +39,7 @@ class RankingSlider extends StatelessWidget {
       children: [
         Text(
           title,
-          style: textTheme.caption!.copyWith(
+          style: textTheme.bodySmall!.copyWith(
             color: colorSchemeExtension.textSecondary,
             fontWeight: FontWeight.w400,
           ),
@@ -91,7 +91,7 @@ class RankingSlider extends StatelessWidget {
                       child: Center(
                         child: Text(
                           isEmpty ? '--' : value,
-                          style: textTheme.caption,
+                          style: textTheme.bodySmall,
                         ),
                       ),
                     ),
@@ -121,7 +121,7 @@ class RankingSlider extends StatelessWidget {
                       child: Center(
                         child: Text(
                           '--',
-                          style: textTheme.caption!.copyWith(
+                          style: textTheme.bodySmall!.copyWith(
                             color: colorScheme.background,
                           ),
                         ),
@@ -134,7 +134,7 @@ class RankingSlider extends StatelessWidget {
                       child: Center(
                         child: Text(
                           isEmpty ? '--' : maxValue,
-                          style: textTheme.caption!.copyWith(
+                          style: textTheme.bodySmall!.copyWith(
                             color: colorScheme.onSecondary,
                           ),
                         ),

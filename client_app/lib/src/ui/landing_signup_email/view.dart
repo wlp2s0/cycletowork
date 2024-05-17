@@ -79,7 +79,7 @@ class _SignupEmailViewState extends State<SignupEmailView> {
                 child: Center(
                   child: Text(
                     AppLocalizations.of(context)!.signupWithEmail,
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
               ),
@@ -167,7 +167,7 @@ class _SignupEmailViewState extends State<SignupEmailView> {
                 margin: EdgeInsets.only(top: 26.0 * scale),
                 child: Text(
                   '(*) Campi obbligatori',
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
               Container(
@@ -176,11 +176,11 @@ class _SignupEmailViewState extends State<SignupEmailView> {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        style: Theme.of(context).textTheme.caption,
+                        style: Theme.of(context).textTheme.bodySmall,
                         text: 'Effettuando l’iscrizione dichiari di accettare ',
                       ),
                       TextSpan(
-                        style: Theme.of(context).textTheme.caption!.copyWith(
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
                               decoration: TextDecoration.underline,
                             ),
                         text: 'l’informativa sulla privacy',
@@ -194,7 +194,7 @@ class _SignupEmailViewState extends State<SignupEmailView> {
                           },
                       ),
                       TextSpan(
-                        style: Theme.of(context).textTheme.caption,
+                        style: Theme.of(context).textTheme.bodySmall,
                         text: ' di Clicle2Work.',
                       ),
                     ],

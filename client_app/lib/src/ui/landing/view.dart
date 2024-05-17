@@ -73,7 +73,7 @@ class _LandingViewState extends State<LandingView> {
                               Expanded(
                                 child: Text(
                                   viewModel.uiState.errorMessage.toUpperCase(),
-                                  style: textTheme.caption!.apply(
+                                  style: textTheme.bodySmall!.apply(
                                     color: colorScheme.onError,
                                   ),
                                   overflow: TextOverflow.ellipsis,

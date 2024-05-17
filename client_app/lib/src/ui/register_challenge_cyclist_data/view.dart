@@ -75,7 +75,7 @@ class _RegisterChallengCyclistDataViewState
                   ),
                   child: Text(
                     'Dati anagrafici',
-                    style: textTheme.headline6!.copyWith(
+                    style: textTheme.titleLarge!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
                     textAlign: TextAlign.center,
@@ -99,7 +99,7 @@ class _RegisterChallengCyclistDataViewState
                     },
                     decoration: InputDecoration(
                       labelText: 'Nome *',
-                      labelStyle: textTheme.bodyText1!.copyWith(
+                      labelStyle: textTheme.bodyLarge!.copyWith(
                         fontWeight: FontWeight.w400,
                         color: colorSchemeExtension.textDisabled,
                       ),
@@ -129,7 +129,7 @@ class _RegisterChallengCyclistDataViewState
                     onChanged: (value) => viewModel.setLastName(value),
                     decoration: InputDecoration(
                       labelText: 'Cognome *',
-                      labelStyle: textTheme.bodyText1!.copyWith(
+                      labelStyle: textTheme.bodyLarge!.copyWith(
                         fontWeight: FontWeight.w400,
                         color: colorSchemeExtension.textDisabled,
                       ),
@@ -159,7 +159,7 @@ class _RegisterChallengCyclistDataViewState
                     onChanged: (value) => viewModel.setBusinessEmail(value),
                     decoration: InputDecoration(
                       labelText: 'Inserisci la tua email aziendale *',
-                      labelStyle: textTheme.bodyText1!.copyWith(
+                      labelStyle: textTheme.bodyLarge!.copyWith(
                         fontWeight: FontWeight.w400,
                         color: colorSchemeExtension.textDisabled,
                       ),
@@ -283,7 +283,7 @@ class _RegisterChallengCyclistDataViewState
                                   children: [
                                     TextSpan(
                                       text: question.title,
-                                      style: textTheme.subtitle1,
+                                      style: textTheme.titleMedium,
                                     ),
                                     TextSpan(
                                       text: question.maxAnswer > 1
@@ -291,11 +291,11 @@ class _RegisterChallengCyclistDataViewState
                                           : question.maxAnswer == 0
                                               ? ' Seleziona tutte le voci che desideri.'
                                               : '',
-                                      style: textTheme.subtitle1,
+                                      style: textTheme.titleMedium,
                                     ),
                                     TextSpan(
                                       text: question.required ? '*' : '',
-                                      style: textTheme.subtitle1,
+                                      style: textTheme.titleMedium,
                                     ),
                                   ],
                                 ),
@@ -332,7 +332,7 @@ class _RegisterChallengCyclistDataViewState
                                           Expanded(
                                             child: Text(
                                               answer,
-                                              style: textTheme.bodyText1,
+                                              style: textTheme.bodyLarge,
                                               overflow: TextOverflow.ellipsis,
                                               maxLines: 5,
                                             ),
@@ -392,13 +392,13 @@ class _RegisterChallengCyclistDataViewState
                               text: TextSpan(
                                 children: [
                                   TextSpan(
-                                    style: textTheme.bodyText1!
+                                    style: textTheme.bodyLarge!
                                         .copyWith(fontWeight: FontWeight.w400),
                                     text:
                                         'Autorizzo al trattamento dei dati e confermo di aver letto ',
                                   ),
                                   TextSpan(
-                                    style: textTheme.bodyText1!.copyWith(
+                                    style: textTheme.bodyLarge!.copyWith(
                                       decoration: TextDecoration.underline,
                                       color: colorScheme.secondary,
                                       fontWeight: FontWeight.w400,
@@ -433,7 +433,7 @@ class _RegisterChallengCyclistDataViewState
                   ),
                   child: Text(
                     '(*) Campi obbligatori',
-                    style: textTheme.caption!.copyWith(
+                    style: textTheme.bodySmall!.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -469,7 +469,7 @@ class _RegisterChallengCyclistDataViewState
                       ),
                       child: AutoSizeText(
                         'Prosegui'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: acceptPrivacy && responsedQuestions
                               ? colorScheme.onSecondary
                               : colorSchemeExtension.textDisabled,
@@ -507,7 +507,7 @@ class _RegisterChallengCyclistDataViewState
                       ),
                       child: AutoSizeText(
                         'Torna indietro'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: colorScheme.secondary,
                         ),
                         maxLines: 1,

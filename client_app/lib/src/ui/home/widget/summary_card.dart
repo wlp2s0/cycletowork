@@ -43,7 +43,7 @@ class SummaryCard extends StatelessWidget {
             ),
             Text(
               co2,
-              style: textTheme.headline4!.copyWith(
+              style: textTheme.headlineMedium!.copyWith(
                 color: infoColor,
                 fontWeight: FontWeight.w700,
               ),
@@ -74,7 +74,7 @@ class SummaryCard extends StatelessWidget {
                         child: Center(
                           child: Text(
                             distance,
-                            style: textTheme.headline5,
+                            style: textTheme.headlineSmall,
                           ),
                         ),
                       ),
@@ -86,11 +86,11 @@ class SummaryCard extends StatelessWidget {
                             children: [
                               Text(
                                 averageSpeed,
-                                style: textTheme.headline5,
+                                style: textTheme.headlineSmall,
                               ),
                               Text(
                                 'VEL. MEDIA',
-                                style: textTheme.caption!.apply(
+                                style: textTheme.bodySmall!.apply(
                                   color: colorSchemeExtension.textDisabled,
                                 ),
                               ),

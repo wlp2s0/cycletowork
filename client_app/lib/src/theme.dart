@@ -70,20 +70,20 @@ class AppTheme {
         errorStyle: TextStyle(
           color: colorScheme.error,
         ),
-        labelStyle: textTheme.subtitle1!.apply(
+        labelStyle: textTheme.titleMedium!.apply(
           color: colorScheme.textSecondary,
         ),
         helperMaxLines: 3,
-        helperStyle: textTheme.caption!.apply(
+        helperStyle: textTheme.bodySmall!.apply(
           color: colorScheme.textSecondary,
         ),
-        counterStyle: textTheme.caption!.apply(
+        counterStyle: textTheme.bodySmall!.apply(
           color: colorScheme.textSecondary,
         ),
-        floatingLabelStyle: textTheme.caption!.apply(
+        floatingLabelStyle: textTheme.bodySmall!.apply(
           color: colorScheme.textSecondary,
         ),
-        hintStyle: textTheme.caption!.apply(
+        hintStyle: textTheme.bodySmall!.apply(
           color: colorScheme.textSecondary,
         ),
       ),
@@ -110,7 +110,7 @@ class AppTheme {
             color: colorScheme.actionSelected,
           ),
         ),
-        labelStyle: textTheme.caption,
+        labelStyle: textTheme.bodySmall,
       ),
       extensions: {
         ColorSchemeExtension(
@@ -193,20 +193,20 @@ class AppTheme {
         errorStyle: TextStyle(
           color: colorScheme.error,
         ),
-        labelStyle: textTheme.subtitle1!.apply(
+        labelStyle: textTheme.titleMedium!.apply(
           color: colorScheme.textSecondary,
         ),
         helperMaxLines: 3,
-        helperStyle: textTheme.caption!.apply(
+        helperStyle: textTheme.bodySmall!.apply(
           color: colorScheme.textSecondary,
         ),
-        counterStyle: textTheme.caption!.apply(
+        counterStyle: textTheme.bodySmall!.apply(
           color: colorScheme.textSecondary,
         ),
-        floatingLabelStyle: textTheme.caption!.apply(
+        floatingLabelStyle: textTheme.bodySmall!.apply(
           color: colorScheme.textSecondary,
         ),
-        hintStyle: textTheme.caption!.apply(
+        hintStyle: textTheme.bodySmall!.apply(
           color: colorScheme.textSecondary,
         ),
       ),
@@ -233,7 +233,7 @@ class AppTheme {
             color: colorScheme.actionSelected,
           ),
         ),
-        labelStyle: textTheme.caption,
+        labelStyle: textTheme.bodySmall,
       ),
       extensions: {
         ColorSchemeExtension(
@@ -251,7 +251,7 @@ class AppTheme {
 
   static TextTheme _getTextTheme(Color text, double scale) {
     return TextTheme(
-      headline1: GoogleFonts.lato(
+      displayLarge: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 96 * scale,
           letterSpacing: -1.5,
@@ -260,7 +260,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      headline2: GoogleFonts.lato(
+      displayMedium: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 60 * scale,
           letterSpacing: -0.5,
@@ -269,7 +269,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      headline3: GoogleFonts.lato(
+      displaySmall: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 48 * scale,
           letterSpacing: 0,
@@ -278,7 +278,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      headline4: GoogleFonts.lato(
+      headlineMedium: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 34 * scale,
           letterSpacing: 0.25,
@@ -287,7 +287,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      headline5: GoogleFonts.lato(
+      headlineSmall: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 24 * scale,
           letterSpacing: 0,
@@ -296,7 +296,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      headline6: GoogleFonts.lato(
+      titleLarge: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 20 * scale,
           letterSpacing: 0.15,
@@ -305,7 +305,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      subtitle1: GoogleFonts.lato(
+      titleMedium: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 16 * scale,
           letterSpacing: 0.15,
@@ -314,7 +314,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      subtitle2: GoogleFonts.lato(
+      titleSmall: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 14 * scale,
           letterSpacing: 0.1,
@@ -323,7 +323,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      bodyText1: GoogleFonts.lato(
+      bodyLarge: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 16 * scale,
           letterSpacing: 0.15,
@@ -332,7 +332,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      bodyText2: GoogleFonts.lato(
+      bodyMedium: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 14 * scale,
           letterSpacing: 0.15,
@@ -341,7 +341,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      caption: GoogleFonts.lato(
+      bodySmall: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 12 * scale,
           letterSpacing: 0.4,
@@ -350,7 +350,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      button: GoogleFonts.lato(
+      labelLarge: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 14 * scale,
           letterSpacing: 0.4,
@@ -359,7 +359,7 @@ class AppTheme {
           color: text,
         ),
       ),
-      overline: GoogleFonts.lato(
+      labelSmall: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: 12 * scale,
           letterSpacing: 1.0,

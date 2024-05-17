@@ -20,7 +20,7 @@ class InformationView extends StatelessWidget {
           Center(
             child: Text(
               'Info',
-              style: textTheme.headline5,
+              style: textTheme.headlineSmall,
             ),
           ),
           _InformationItem(
@@ -88,7 +88,7 @@ class _InformationItem extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: textTheme.bodyText1,
+                  style: textTheme.bodyLarge,
                 ),
               ],
             ),

@@ -74,7 +74,7 @@ class AppDrawer extends StatelessWidget {
                           menuOption == item
                               ? Colors.black
                               : colorScheme.onBackground,
-                          Theme.of(context).textTheme.bodyText1!.apply(
+                          Theme.of(context).textTheme.bodyLarge!.apply(
                                 color: menuOption == item
                                     ? Colors.black
                                     : colorScheme.onBackground,
@@ -86,7 +86,7 @@ class AppDrawer extends StatelessWidget {
                           menuOption == item
                               ? Colors.black
                               : colorScheme.onBackground,
-                          Theme.of(context).textTheme.bodyText1!.apply(
+                          Theme.of(context).textTheme.bodyLarge!.apply(
                                 color: menuOption == item
                                     ? Colors.black
                                     : colorScheme.onBackground,

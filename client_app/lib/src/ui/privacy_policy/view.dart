@@ -14,7 +14,7 @@ class PrivacyPolicyView extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Privacy Policy',
-          style: textTheme.bodyText1,
+          style: textTheme.bodyLarge,
         ),
         leading: IconButton(
           splashRadius: 25.0,

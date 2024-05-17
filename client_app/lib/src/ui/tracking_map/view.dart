@@ -283,7 +283,7 @@ class _Co2Tracking extends StatelessWidget {
       children: [
         Text(
           'CO\u2082'.toUpperCase(),
-          style: textTheme.caption!.apply(
+          style: textTheme.bodySmall!.apply(
             color: colorSchemeExtension.textSecondary,
           ),
         ),
@@ -292,7 +292,7 @@ class _Co2Tracking extends StatelessWidget {
         ),
         Text(
           co2,
-          style: textTheme.headline4!.copyWith(
+          style: textTheme.headlineMedium!.copyWith(
             color: colorSchemeExtension.info,
             fontWeight: FontWeight.w700,
           ),
@@ -302,7 +302,7 @@ class _Co2Tracking extends StatelessWidget {
         ),
         Text(
           measurementUnit == AppMeasurementUnit.metric ? 'Kg' : 'lb',
-          style: textTheme.caption!.apply(
+          style: textTheme.bodySmall!.apply(
             color: colorSchemeExtension.textSecondary,
           ),
         ),

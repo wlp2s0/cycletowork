@@ -15,7 +15,7 @@ class MilanoBikeChallengeRegulationsView extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Regolamento Milano Bike Challenge',
-          style: textTheme.bodyText1,
+          style: textTheme.bodyLarge,
         ),
         leading: IconButton(
           splashRadius: 25.0,

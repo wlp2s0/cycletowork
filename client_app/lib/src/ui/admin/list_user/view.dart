@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as b;
 import 'package:cycletowork/src/data/user.dart';
 import 'package:cycletowork/src/theme.dart';
 import 'package:cycletowork/src/ui/admin/dashboard/view_model.dart';
@@ -78,7 +78,7 @@ class _AdminListUserViewState extends State<AdminListUserView>
           ),
           title: Text(
             'Utenti',
-            style: textTheme.headline6,
+            style: textTheme.titleLarge,
           ),
         ),
         body: const Center(
@@ -98,7 +98,7 @@ class _AdminListUserViewState extends State<AdminListUserView>
         ),
         title: Text(
           'Utenti',
-          style: textTheme.headline6,
+          style: textTheme.titleLarge,
         ),
         actions: [
           TextButton.icon(
@@ -241,7 +241,7 @@ class _TableDataSource extends DataTableSource {
         DataCell(
           Tooltip(
             message: user.verified ? 'VERIFICATO' : '',
-            child: Badge(
+            child: b.Badge(
               badgeColor: Colors.blueAccent,
               showBadge: user.verified,
               badgeContent: const Icon(

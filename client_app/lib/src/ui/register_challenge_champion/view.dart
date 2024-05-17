@@ -81,7 +81,7 @@ class _RegisterChallengChampionViewState
                   ),
                   child: Text(
                     'Registrazione azienda',
-                    style: textTheme.headline6!.copyWith(
+                    style: textTheme.titleLarge!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
                     textAlign: TextAlign.center,
@@ -104,7 +104,7 @@ class _RegisterChallengChampionViewState
                     children: [
                       Text(
                         'Sei socio FIAB?',
-                        style: textTheme.caption!.copyWith(
+                        style: textTheme.bodySmall!.copyWith(
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -136,7 +136,7 @@ class _RegisterChallengChampionViewState
                                     Expanded(
                                       child: Text(
                                         'Si',
-                                        style: textTheme.bodyText1,
+                                        style: textTheme.bodyLarge,
                                       ),
                                     ),
                                   ],
@@ -170,7 +170,7 @@ class _RegisterChallengChampionViewState
                                     Expanded(
                                       child: Text(
                                         'No',
-                                        style: textTheme.bodyText1,
+                                        style: textTheme.bodyLarge,
                                       ),
                                     ),
                                   ],
@@ -208,7 +208,7 @@ class _RegisterChallengChampionViewState
                               children: [
                                 AutoSizeText(
                                   'Scopri come diventarlo'.toUpperCase(),
-                                  style: textTheme.button!.copyWith(
+                                  style: textTheme.labelLarge!.copyWith(
                                     color: color,
                                   ),
                                   maxLines: 1,
@@ -237,7 +237,7 @@ class _RegisterChallengChampionViewState
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
                             labelText: 'Numero tessera',
-                            labelStyle: textTheme.bodyText1!.copyWith(
+                            labelStyle: textTheme.bodyLarge!.copyWith(
                               fontWeight: FontWeight.w400,
                               color: colorSchemeExtension.textDisabled,
                             ),
@@ -268,7 +268,7 @@ class _RegisterChallengChampionViewState
                         TextSpan(
                           text:
                               'Vuoi iscrivere la tua azienda e diventare Champion?',
-                          style: textTheme.caption!.copyWith(
+                          style: textTheme.bodySmall!.copyWith(
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -314,7 +314,7 @@ class _RegisterChallengChampionViewState
                     onChanged: (value) => viewModel.setCompanyToAddName(value),
                     decoration: InputDecoration(
                       labelText: 'Come si chiama la tua azienda? *',
-                      labelStyle: textTheme.bodyText1!.copyWith(
+                      labelStyle: textTheme.bodyLarge!.copyWith(
                         fontWeight: FontWeight.w400,
                         color: colorSchemeExtension.textDisabled,
                       ),
@@ -340,7 +340,7 @@ class _RegisterChallengChampionViewState
                     isExpanded: true,
                     hint: Text(
                       'In quale settore opera? *',
-                      style: textTheme.bodyText1!.copyWith(
+                      style: textTheme.bodyLarge!.copyWith(
                         fontWeight: FontWeight.w400,
                         color: colorSchemeExtension.textDisabled,
                       ),
@@ -350,7 +350,7 @@ class _RegisterChallengChampionViewState
                         value: value,
                         child: Text(
                           value,
-                          style: textTheme.caption,
+                          style: textTheme.bodySmall,
                         ),
                       );
                     }).toList(),
@@ -387,7 +387,7 @@ class _RegisterChallengChampionViewState
                         viewModel.setCompanyToAddEmployeesNumber(value),
                     decoration: InputDecoration(
                       labelText: 'Numero di dipendenti *',
-                      labelStyle: textTheme.bodyText1!.copyWith(
+                      labelStyle: textTheme.bodyLarge!.copyWith(
                         fontWeight: FontWeight.w400,
                         color: colorSchemeExtension.textDisabled,
                       ),
@@ -419,7 +419,7 @@ class _RegisterChallengChampionViewState
                             TextSpan(
                               text:
                                   'La tua azienda parteciperà al torneo delle',
-                              style: textTheme.bodyText1!.copyWith(
+                              style: textTheme.bodyLarge!.copyWith(
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -450,7 +450,7 @@ class _RegisterChallengChampionViewState
                       ),
                       Text(
                         companyEmployessNumberCategory,
-                        style: textTheme.bodyText1!.copyWith(
+                        style: textTheme.bodyLarge!.copyWith(
                           fontWeight: FontWeight.w700,
                           color: color,
                         ),
@@ -471,7 +471,7 @@ class _RegisterChallengChampionViewState
                     children: [
                       Text(
                         'La tua azienda ha: *',
-                        style: textTheme.subtitle1,
+                        style: textTheme.titleMedium,
                       ),
                       InkWell(
                         borderRadius: const BorderRadius.all(
@@ -492,7 +492,7 @@ class _RegisterChallengChampionViewState
                               Expanded(
                                 child: Text(
                                   'Una sola sede',
-                                  style: textTheme.bodyText1,
+                                  style: textTheme.bodyLarge,
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 5,
                                 ),
@@ -520,7 +520,7 @@ class _RegisterChallengChampionViewState
                               Expanded(
                                 child: Text(
                                   'Più sedi o dipartimenti',
-                                  style: textTheme.bodyText1,
+                                  style: textTheme.bodyLarge,
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 5,
                                 ),
@@ -550,13 +550,13 @@ class _RegisterChallengChampionViewState
                       children: [
                         Text(
                           'Segnala sedi e/o dipartimenti',
-                          style: textTheme.headline6!.copyWith(
+                          style: textTheme.titleLarge!.copyWith(
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         Text(
                           'Segnala le diverse sedi e/o dipartimenti solo se desideri consultare le classifiche della tua azienda divise per sede o dipartimento.',
-                          style: textTheme.subtitle2!.copyWith(
+                          style: textTheme.titleSmall!.copyWith(
                             fontWeight: FontWeight.w500,
                             color: colorSchemeExtension.textSecondary,
                           ),
@@ -622,7 +622,7 @@ class _RegisterChallengChampionViewState
                             children: [
                               Text(
                                 'Aggiungi un’altra sede o dipartimento',
-                                style: textTheme.bodyText2,
+                                style: textTheme.bodyMedium,
                               ),
                               ElevatedButton(
                                 onPressed: () =>
@@ -736,7 +736,7 @@ class _RegisterChallengChampionViewState
                   ),
                   child: Text(
                     '(*) Campi obbligatori',
-                    style: textTheme.caption!.copyWith(
+                    style: textTheme.bodySmall!.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -767,7 +767,7 @@ class _RegisterChallengChampionViewState
                       ),
                       child: AutoSizeText(
                         'Prosegui'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: colorScheme.onSecondary,
                         ),
                         maxLines: 1,
@@ -803,7 +803,7 @@ class _RegisterChallengChampionViewState
                       ),
                       child: AutoSizeText(
                         'Torna indietro'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: colorScheme.secondary,
                         ),
                         maxLines: 1,

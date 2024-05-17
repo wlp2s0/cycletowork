@@ -102,7 +102,7 @@ class _ButtonStyle {
   final double _marginRight = 5.0;
 
   _ButtonStyle(BuildContext context, ButtonType type) {
-    var buttonStyle = Theme.of(context).textTheme.button;
+    var buttonStyle = Theme.of(context).textTheme.labelLarge;
     buttonStyle ??= const TextStyle();
     textStyle = buttonStyle;
     backgroundColor = Theme.of(context).colorScheme.primary;

@@ -1,4 +1,4 @@
-import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as b;
 import 'package:cycletowork/src/data/user.dart';
 import 'package:cycletowork/src/theme.dart';
 import 'package:cycletowork/src/ui/admin/details_user/add_user_activity.dart';
@@ -57,7 +57,7 @@ class AdminDetailsUser extends StatelessWidget {
                             ),
                             Text(
                               viewModel.uiState.errorMessage.toUpperCase(),
-                              style: textTheme.button!.apply(
+                              style: textTheme.labelLarge!.apply(
                                 color: colorScheme.onError,
                               ),
                             ),
@@ -132,9 +132,9 @@ class AdminDetailsUser extends StatelessWidget {
                     ),
                     Tooltip(
                       message: verified ? 'VERIFICATO' : '',
-                      child: Badge(
+                      child: b.Badge(
                         badgeColor: Colors.blueAccent,
-                        position: BadgePosition.bottomEnd(end: 15.0),
+                        position: b.BadgePosition.bottomEnd(end: 15.0),
                         showBadge: verified,
                         badgeContent: const Icon(
                           Icons.verified_outlined,
@@ -162,7 +162,7 @@ class AdminDetailsUser extends StatelessWidget {
                     ),
                     Text(
                       displayName ?? '',
-                      style: textTheme.bodyText1,
+                      style: textTheme.bodyLarge,
                     )
                   ],
                 ),
@@ -171,7 +171,7 @@ class AdminDetailsUser extends StatelessWidget {
                 ),
                 Text(
                   'ACCOUNT',
-                  style: textTheme.bodyText1!.apply(
+                  style: textTheme.bodyLarge!.apply(
                     color: colorSchemeExtension.textSecondary,
                   ),
                 ),
@@ -180,13 +180,13 @@ class AdminDetailsUser extends StatelessWidget {
                 ),
                 Text(
                   'Email',
-                  style: textTheme.caption!.apply(
+                  style: textTheme.bodySmall!.apply(
                     color: colorSchemeExtension.textSecondary,
                   ),
                 ),
                 Text(
                   email,
-                  style: textTheme.bodyText1,
+                  style: textTheme.bodyLarge,
                 ),
                 const SizedBox(
                   height: 10.0,

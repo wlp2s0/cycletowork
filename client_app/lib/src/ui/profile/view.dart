@@ -61,7 +61,7 @@ class ProfileView extends StatelessWidget {
                 },
                 child: Text(
                   'Modifica',
-                  style: textTheme.caption!.copyWith(
+                  style: textTheme.bodySmall!.copyWith(
                     color: color,
                   ),
                 ),
@@ -88,7 +88,7 @@ class ProfileView extends StatelessWidget {
               ),
               Text(
                 displayName ?? '',
-                style: textTheme.bodyText1,
+                style: textTheme.bodyLarge,
               )
             ],
           ),
@@ -97,7 +97,7 @@ class ProfileView extends StatelessWidget {
           ),
           Text(
             'ACCOUNT',
-            style: textTheme.bodyText1!.apply(
+            style: textTheme.bodyLarge!.apply(
               color: colorSchemeExtension.textSecondary,
             ),
           ),
@@ -132,7 +132,7 @@ class ProfileView extends StatelessWidget {
                   },
                   child: Text(
                     'Modifica Password',
-                    style: textTheme.caption!.copyWith(
+                    style: textTheme.bodySmall!.copyWith(
                       color: color,
                     ),
                   ),
@@ -235,12 +235,12 @@ class _ChallengeRegisterdData extends StatelessWidget {
                   children: [
                     Text(
                       'I tuoi dati di iscrizione alla challenge',
-                      style: textTheme.bodyText2,
+                      style: textTheme.bodyMedium,
                       textAlign: TextAlign.center,
                     ),
                     Text(
                       challengeRegistry.challengeName,
-                      style: textTheme.headline6,
+                      style: textTheme.titleLarge,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
@@ -259,7 +259,7 @@ class _ChallengeRegisterdData extends StatelessWidget {
               children: [
                 Text(
                   'Sei il Champion della tua azienda',
-                  style: textTheme.bodyText2,
+                  style: textTheme.bodyMedium,
                 ),
                 SizedBox(
                   width: 10 * scale,
@@ -335,13 +335,13 @@ class _ListItem extends StatelessWidget {
         ),
         Text(
           title,
-          style: textTheme.caption!.apply(
+          style: textTheme.bodySmall!.apply(
             color: colorSchemeExtension.textSecondary,
           ),
         ),
         Text(
           value ?? '',
-          style: textTheme.bodyText1,
+          style: textTheme.bodyLarge,
         ),
         SizedBox(
           height: 5.0 * scale,

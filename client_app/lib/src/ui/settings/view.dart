@@ -39,7 +39,7 @@ class SettingsView extends StatelessWidget {
           Center(
             child: Text(
               'Impostazioni',
-              style: textTheme.headline5,
+              style: textTheme.headlineSmall,
             ),
           ),
           SizedBox(
@@ -51,14 +51,14 @@ class SettingsView extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 10.0 * scale),
                 child: Text(
                   'Dark mode',
-                  style: textTheme.bodyText1,
+                  style: textTheme.bodyLarge,
                 ),
               ),
               subtitle: DropdownButtonFormField<String>(
                 isExpanded: true,
                 hint: Text(
                   'Seleziona dark mode',
-                  style: textTheme.bodyText1!.copyWith(
+                  style: textTheme.bodyLarge!.copyWith(
                     fontWeight: FontWeight.w400,
                     color: colorSchemeExtension.textDisabled,
                   ),
@@ -68,7 +68,7 @@ class SettingsView extends StatelessWidget {
                     value: value,
                     child: Text(
                       value,
-                      style: textTheme.caption,
+                      style: textTheme.bodySmall,
                     ),
                   );
                 }).toList(),
@@ -100,14 +100,14 @@ class SettingsView extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 10.0 * scale),
                 child: Text(
                   'Unità di misura',
-                  style: textTheme.bodyText1,
+                  style: textTheme.bodyLarge,
                 ),
               ),
               subtitle: DropdownButtonFormField<String>(
                 isExpanded: true,
                 hint: Text(
                   'Seleziona unità di misura',
-                  style: textTheme.bodyText1!.copyWith(
+                  style: textTheme.bodyLarge!.copyWith(
                     fontWeight: FontWeight.w400,
                     color: colorSchemeExtension.textDisabled,
                   ),
@@ -117,7 +117,7 @@ class SettingsView extends StatelessWidget {
                     value: value,
                     child: Text(
                       value,
-                      style: textTheme.caption,
+                      style: textTheme.bodySmall,
                     ),
                   );
                 }).toList(),
@@ -151,12 +151,12 @@ class SettingsView extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 10.0 * scale),
                 child: Text(
                   'Schermo sempre attivo',
-                  style: textTheme.bodyText1,
+                  style: textTheme.bodyLarge,
                 ),
               ),
               subtitle: Text(
                 'Questa opzione, se attiva, impedisce allo schermo di spegnersi durante la registrazione di una pedalata.',
-                style: textTheme.caption,
+                style: textTheme.bodySmall,
               ),
               trailing: Switch(
                 activeColor: color,

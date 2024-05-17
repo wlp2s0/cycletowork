@@ -26,14 +26,13 @@ if (flutterMinSdkVersion == null) {
     flutterMinSdkVersion = '21'
 }
 
-def mapsApiKey = localProperties.getProperty('MAPS_API_KEY')
-
 def keystoreProperties = new Properties()
 def keystorePropertiesFile = rootProject.file('key.properties')
 if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
+apply plugin: "com.google.android.libraries.mapsplatform.secrets-gradle-plugin"
 apply plugin: 'com.android.application'
 // START: FlutterFire Configuration
 apply plugin: 'com.google.gms.google-services'
@@ -41,6 +40,8 @@ apply plugin: 'com.google.firebase.crashlytics'
 // END: FlutterFire Configuration
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+// apply plugin: "dev.flutter.flutter-gradle-plugin"
+
 
 android {
     compileSdkVersion 33
@@ -67,17 +68,15 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    defaultConfig {
-        manifestPlaceholders = [mapsApiKey: mapsApiKey]
-    }
-
     signingConfigs {
+        /*
        debug {
            keyAlias keystoreProperties['keyAlias']
            keyPassword keystoreProperties['keyPassword']
            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
            storePassword keystoreProperties['storePassword']
        }
+       */
         release {
            keyAlias keystoreProperties['keyAlias']
            keyPassword keystoreProperties['keyPassword']
@@ -109,4 +108,14 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"  
+}
+
+secrets {
+    // Optionally specify a different file name containing your secrets.
+    // The plugin defaults to "local.properties"
+    propertiesFileName = "secrets.properties"
+
+    // A properties file containing default secret values. This file can be
+    // checked in version control.
+    defaultPropertiesFileName = "local.defaults.properties"
 }

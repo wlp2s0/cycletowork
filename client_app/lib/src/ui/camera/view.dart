@@ -43,7 +43,7 @@ class CameraView extends StatelessWidget {
                             Expanded(
                               child: Text(
                                 viewModel.uiState.errorMessage.toUpperCase(),
-                                style: textTheme.caption!.apply(
+                                style: textTheme.bodySmall!.apply(
                                   color: colorScheme.onError,
                                 ),
                                 overflow: TextOverflow.ellipsis,
@@ -116,7 +116,7 @@ class CameraView extends StatelessWidget {
                                 onPressed: viewModel.clearPhoto,
                                 child: Text(
                                   'Scatta di nuovo',
-                                  style: textTheme.bodyText1!.copyWith(
+                                  style: textTheme.bodyLarge!.copyWith(
                                     color: colorScheme.onSecondary,
                                   ),
                                 ),
@@ -137,7 +137,7 @@ class CameraView extends StatelessWidget {
                                 ),
                                 child: Text(
                                   'Usa foto',
-                                  style: textTheme.bodyText1!.copyWith(
+                                  style: textTheme.bodyLarge!.copyWith(
                                     color: colorScheme.onSecondary,
                                   ),
                                 ),
@@ -253,7 +253,7 @@ class CameraView extends StatelessWidget {
                             onPressed: () => Navigator.pop(context),
                             child: Text(
                               'Annulla',
-                              style: textTheme.bodyText1!.copyWith(
+                              style: textTheme.bodyLarge!.copyWith(
                                 color: colorScheme.onSecondary,
                               ),
                             ),

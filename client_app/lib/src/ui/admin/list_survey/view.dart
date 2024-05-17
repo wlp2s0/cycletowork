@@ -56,7 +56,7 @@ class _AdminListSurveyViewState extends State<AdminListSurveyView>
           ),
           title: Text(
             'Sondaggi',
-            style: textTheme.headline6,
+            style: textTheme.titleLarge,
           ),
         ),
         body: const Center(
@@ -76,7 +76,7 @@ class _AdminListSurveyViewState extends State<AdminListSurveyView>
         ),
         title: Text(
           'Sondaggi',
-          style: textTheme.headline6,
+          style: textTheme.titleLarge,
         ),
         actions: [
           TextButton.icon(

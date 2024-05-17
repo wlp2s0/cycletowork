@@ -311,7 +311,7 @@ class EditCompanyDialog {
                                       ),
                                       Text(
                                         'Aggiungi',
-                                        style: textTheme.caption!.copyWith(
+                                        style: textTheme.bodySmall!.copyWith(
                                           color: colorScheme.secondary,
                                         ),
                                       ),
@@ -334,7 +334,7 @@ class EditCompanyDialog {
                                 child: Center(
                                   child: Text(
                                     "Non hai ancora aggiungiato nessun' dipartimento",
-                                    style: textTheme.headline5!.copyWith(
+                                    style: textTheme.headlineSmall!.copyWith(
                                       color: colorSchemeExtension.textDisabled,
                                     ),
                                     textAlign: TextAlign.center,

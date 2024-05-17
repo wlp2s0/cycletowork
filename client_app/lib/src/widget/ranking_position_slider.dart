@@ -30,7 +30,7 @@ class RankingPositionSlider extends StatelessWidget {
       children: [
         Text(
           title,
-          style: textTheme.caption!.copyWith(
+          style: textTheme.bodySmall!.copyWith(
             color: colorSchemeExtension.textSecondary,
             fontWeight: FontWeight.w400,
           ),

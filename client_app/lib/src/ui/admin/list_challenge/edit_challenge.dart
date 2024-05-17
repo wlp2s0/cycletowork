@@ -354,7 +354,7 @@ class EditChallengeDialog {
                                       ),
                                       Text(
                                         'Aggiungi',
-                                        style: textTheme.caption!.copyWith(
+                                        style: textTheme.bodySmall!.copyWith(
                                           color: colorScheme.secondary,
                                         ),
                                       ),
@@ -377,7 +377,7 @@ class EditChallengeDialog {
                                 child: Center(
                                   child: Text(
                                     "Non hai ancora aggiungiato nessun domanda",
-                                    style: textTheme.headline5!.copyWith(
+                                    style: textTheme.headlineSmall!.copyWith(
                                       color: colorSchemeExtension.textDisabled,
                                     ),
                                     textAlign: TextAlign.center,
@@ -628,7 +628,8 @@ class EditChallengeDialog {
                                                     ),
                                                     Text(
                                                       'Aggiungi risposte',
-                                                      style: textTheme.caption!
+                                                      style: textTheme
+                                                          .bodySmall!
                                                           .copyWith(
                                                         color: colorScheme
                                                             .secondary,

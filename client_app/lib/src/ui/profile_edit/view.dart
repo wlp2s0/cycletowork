@@ -71,7 +71,7 @@ class _ProfileEditViewState extends State<ProfileEditView> {
                             Expanded(
                               child: Text(
                                 viewModel.uiState.errorMessage.toUpperCase(),
-                                style: textTheme.caption!.apply(
+                                style: textTheme.bodySmall!.apply(
                                   color: colorScheme.onError,
                                 ),
                                 overflow: TextOverflow.ellipsis,
@@ -124,7 +124,7 @@ class _ProfileEditViewState extends State<ProfileEditView> {
                             onPressed: () => Navigator.pop(context),
                             child: Text(
                               'Annulla',
-                              style: textTheme.caption!.copyWith(
+                              style: textTheme.bodySmall!.copyWith(
                                 color: color,
                               ),
                             ),
@@ -166,7 +166,8 @@ class _ProfileEditViewState extends State<ProfileEditView> {
                                               child: Text(
                                                 'IL TUO NICK NAME È STATA CAMBIATA!'
                                                     .toUpperCase(),
-                                                style: textTheme.caption!.apply(
+                                                style:
+                                                    textTheme.bodySmall!.apply(
                                                   color: colorScheme.onError,
                                                 ),
                                                 overflow: TextOverflow.ellipsis,
@@ -188,7 +189,7 @@ class _ProfileEditViewState extends State<ProfileEditView> {
                             },
                             child: Text(
                               'Salva',
-                              style: textTheme.caption!.copyWith(
+                              style: textTheme.bodySmall!.copyWith(
                                 color: color,
                               ),
                             ),
@@ -295,7 +296,7 @@ class _ProfileEditViewState extends State<ProfileEditView> {
                               ),
                               Text(
                                 'Modifica immagine',
-                                style: textTheme.bodyText1!.copyWith(
+                                style: textTheme.bodyLarge!.copyWith(
                                   color: color,
                                 ),
                               ),

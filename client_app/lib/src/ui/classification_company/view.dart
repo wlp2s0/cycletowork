@@ -439,7 +439,7 @@ class _Card extends StatelessWidget {
                   width: 60.0 * scale,
                   child: Text(
                     ranking.toString(),
-                    style: textTheme.bodyText1!.copyWith(
+                    style: textTheme.bodyLarge!.copyWith(
                       color: selected
                           ? colorScheme.secondary
                           : colorSchemeExtension.textPrimary,
@@ -486,7 +486,7 @@ class _Card extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         softWrap: true,
                         maxLines: 1,
-                        style: textTheme.subtitle1!.copyWith(
+                        style: textTheme.titleMedium!.copyWith(
                           fontWeight: FontWeight.w700,
                           color: selected
                               ? colorScheme.secondary
@@ -501,7 +501,7 @@ class _Card extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             softWrap: true,
                             maxLines: 1,
-                            style: textTheme.caption!.copyWith(
+                            style: textTheme.bodySmall!.copyWith(
                               fontWeight: FontWeight.w400,
                               color: colorSchemeExtension.textSecondary,
                             ),
@@ -526,7 +526,7 @@ class _Card extends StatelessWidget {
                                   softWrap: true,
                                   maxLines: 1,
                                   textAlign: TextAlign.start,
-                                  style: textTheme.caption!.copyWith(
+                                  style: textTheme.bodySmall!.copyWith(
                                     fontWeight: FontWeight.w400,
                                     color: colorSchemeExtension.info,
                                   ),
@@ -545,7 +545,7 @@ class _Card extends StatelessWidget {
                                 softWrap: true,
                                 maxLines: 1,
                                 textAlign: TextAlign.start,
-                                style: textTheme.caption!.copyWith(
+                                style: textTheme.bodySmall!.copyWith(
                                   fontWeight: FontWeight.w400,
                                   color: colorScheme.secondary,
                                 ),

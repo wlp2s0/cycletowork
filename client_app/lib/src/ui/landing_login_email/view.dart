@@ -81,7 +81,7 @@ class _LoginEmailViewState extends State<LoginEmailView> {
                 child: Center(
                   child: Text(
                     'Accedi con l’indirizzo email',
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
               ),
@@ -132,7 +132,7 @@ class _LoginEmailViewState extends State<LoginEmailView> {
                 margin: EdgeInsets.only(top: 26.0 * scale),
                 child: Text(
                   '(*) Campi obbligatori',
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
               Container(
@@ -178,7 +178,7 @@ class _LoginEmailViewState extends State<LoginEmailView> {
                 margin: EdgeInsets.only(top: 24.0 * scale),
                 child: Text(
                   'Oppure',
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.bodySmall,
                   textAlign: TextAlign.center,
                 ),
               ),

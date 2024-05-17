@@ -16,7 +16,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await FirebaseAppCheck.instance.activate(
-    webRecaptchaSiteKey: dotenv.env['RECAPTCHA_V3_SITE_KEY'],
+    // You can also use a `ReCaptchaEnterpriseProvider` provider instance as an argument for `webProvider`
+    webProvider: ReCaptchaV3Provider(dotenv.env['RECAPTCHA_V3_SITE_KEY']!),
   );
 
   runApp(

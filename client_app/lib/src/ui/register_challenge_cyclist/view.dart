@@ -90,7 +90,7 @@ class _RegisterChallengCyclistViewState
                   ),
                   child: Text(
                     'Iscrizione ciclista',
-                    style: textTheme.headline6!.copyWith(
+                    style: textTheme.titleLarge!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
                     textAlign: TextAlign.center,
@@ -113,7 +113,7 @@ class _RegisterChallengCyclistViewState
                     children: [
                       Text(
                         'Sei socio FIAB?',
-                        style: textTheme.caption!.copyWith(
+                        style: textTheme.bodySmall!.copyWith(
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -145,7 +145,7 @@ class _RegisterChallengCyclistViewState
                                     Expanded(
                                       child: Text(
                                         'Si',
-                                        style: textTheme.bodyText1,
+                                        style: textTheme.bodyLarge,
                                       ),
                                     ),
                                   ],
@@ -179,7 +179,7 @@ class _RegisterChallengCyclistViewState
                                     Expanded(
                                       child: Text(
                                         'No',
-                                        style: textTheme.bodyText1,
+                                        style: textTheme.bodyLarge,
                                       ),
                                     ),
                                   ],
@@ -217,7 +217,7 @@ class _RegisterChallengCyclistViewState
                               children: [
                                 AutoSizeText(
                                   'Scopri come diventarlo'.toUpperCase(),
-                                  style: textTheme.button!.copyWith(
+                                  style: textTheme.labelLarge!.copyWith(
                                     color: color,
                                   ),
                                   maxLines: 1,
@@ -246,7 +246,7 @@ class _RegisterChallengCyclistViewState
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
                             labelText: 'Numero tessera',
-                            labelStyle: textTheme.bodyText1!.copyWith(
+                            labelStyle: textTheme.bodyLarge!.copyWith(
                               fontWeight: FontWeight.w400,
                               color: colorSchemeExtension.textDisabled,
                             ),
@@ -276,7 +276,7 @@ class _RegisterChallengCyclistViewState
                       ),
                       child: Text(
                         'Seleziona la tua azienda',
-                        style: textTheme.headline6!.copyWith(
+                        style: textTheme.titleLarge!.copyWith(
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -291,7 +291,7 @@ class _RegisterChallengCyclistViewState
                       ),
                       child: Text(
                         'Se la tua azienda non è nell’elenco, ma sai che dovrebbe esserci, contatta il tuo referente.',
-                        style: textTheme.subtitle2!.copyWith(
+                        style: textTheme.titleSmall!.copyWith(
                           fontWeight: FontWeight.w500,
                           color: colorSchemeExtension.textSecondary,
                         ),
@@ -313,7 +313,7 @@ class _RegisterChallengCyclistViewState
                         textInputAction: TextInputAction.next,
                         decoration: InputDecoration(
                           hintText: 'Seleziona la tua azienda',
-                          hintStyle: textTheme.bodyText1!.copyWith(
+                          hintStyle: textTheme.bodyLarge!.copyWith(
                             fontWeight: FontWeight.w400,
                             color: colorSchemeExtension.textDisabled,
                           ),
@@ -352,8 +352,8 @@ class _RegisterChallengCyclistViewState
                                 labelPadding: EdgeInsets.symmetric(
                                   horizontal: 15.0 * scale,
                                 ),
-                                textStyle: textTheme.bodyText2,
-                                selectedTextStyle: textTheme.bodyText2!.apply(
+                                textStyle: textTheme.bodyMedium,
+                                selectedTextStyle: textTheme.bodyMedium!.apply(
                                   color:
                                       colorScheme.brightness == Brightness.dark
                                           ? colorScheme.onPrimary
@@ -372,9 +372,9 @@ class _RegisterChallengCyclistViewState
                                         : Colors.black,
                                 controlButtonTheme: ControlButtonThemeData(
                                   primaryButtonBackgroundColor: color,
-                                  textStyle: textTheme.button,
+                                  textStyle: textTheme.labelLarge,
                                   primaryButtonTextStyle:
-                                      textTheme.button!.apply(
+                                      textTheme.labelLarge!.apply(
                                     color: colorScheme.onPrimary,
                                   ),
                                 ),
@@ -437,7 +437,7 @@ class _RegisterChallengCyclistViewState
                           isExpanded: true,
                           hint: Text(
                             'Seleziona la sede e/o il dipartimento',
-                            style: textTheme.bodyText1!.copyWith(
+                            style: textTheme.bodyLarge!.copyWith(
                               fontWeight: FontWeight.w400,
                               color: colorSchemeExtension.textDisabled,
                             ),
@@ -449,7 +449,7 @@ class _RegisterChallengCyclistViewState
                               value: value,
                               child: Text(
                                 value,
-                                style: textTheme.caption,
+                                style: textTheme.bodySmall,
                               ),
                             );
                           }).toList(),
@@ -501,7 +501,7 @@ class _RegisterChallengCyclistViewState
                               ),
                               child: AutoSizeText(
                                 'La tua azienda non partecipa?'.toUpperCase(),
-                                style: textTheme.headline6!.copyWith(
+                                style: textTheme.titleLarge!.copyWith(
                                   fontWeight: FontWeight.w800,
                                   fontSize: 18 * scale,
                                   color: Colors.black,
@@ -533,28 +533,28 @@ class _RegisterChallengCyclistViewState
                                     children: [
                                       TextSpan(
                                         text: 'Chiedi al tuo ',
-                                        style: textTheme.subtitle1!.copyWith(
+                                        style: textTheme.titleMedium!.copyWith(
                                           fontWeight: FontWeight.w400,
                                           color: Colors.black,
                                         ),
                                       ),
                                       TextSpan(
                                         text: 'Mobility Manager',
-                                        style: textTheme.subtitle1!.copyWith(
+                                        style: textTheme.titleMedium!.copyWith(
                                           fontWeight: FontWeight.w800,
                                           color: Colors.black,
                                         ),
                                       ),
                                       TextSpan(
                                         text: ', oppure alle ',
-                                        style: textTheme.subtitle1!.copyWith(
+                                        style: textTheme.titleMedium!.copyWith(
                                           fontWeight: FontWeight.w400,
                                           color: Colors.black,
                                         ),
                                       ),
                                       TextSpan(
                                         text: 'Risorse Umane',
-                                        style: textTheme.subtitle1!.copyWith(
+                                        style: textTheme.titleMedium!.copyWith(
                                           fontWeight: FontWeight.w800,
                                           color: Colors.black,
                                         ),
@@ -562,7 +562,7 @@ class _RegisterChallengCyclistViewState
                                       TextSpan(
                                         text:
                                             ', di contattarci all’indirizzo email:',
-                                        style: textTheme.subtitle1!.copyWith(
+                                        style: textTheme.titleMedium!.copyWith(
                                           fontWeight: FontWeight.w400,
                                           color: Colors.black,
                                         ),
@@ -575,7 +575,7 @@ class _RegisterChallengCyclistViewState
                                 ),
                                 SelectableText(
                                   emailFiab,
-                                  style: textTheme.subtitle1!.copyWith(
+                                  style: textTheme.titleMedium!.copyWith(
                                     fontWeight: FontWeight.w400,
                                     decoration: TextDecoration.underline,
                                     color: colorScheme.secondary,
@@ -615,7 +615,7 @@ class _RegisterChallengCyclistViewState
                       ),
                       child: AutoSizeText(
                         'Prosegui'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: colorScheme.onSecondary,
                         ),
                         maxLines: 1,
@@ -651,7 +651,7 @@ class _RegisterChallengCyclistViewState
                       ),
                       child: AutoSizeText(
                         'Torna indietro'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: colorScheme.secondary,
                         ),
                         maxLines: 1,

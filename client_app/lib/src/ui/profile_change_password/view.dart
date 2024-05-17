@@ -60,7 +60,7 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
                             Expanded(
                               child: Text(
                                 viewModel.uiState.errorMessage.toUpperCase(),
-                                style: textTheme.caption!.apply(
+                                style: textTheme.bodySmall!.apply(
                                   color: colorScheme.onError,
                                 ),
                                 overflow: TextOverflow.ellipsis,
@@ -113,7 +113,7 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
                             onPressed: () => Navigator.pop(context),
                             child: Text(
                               'Annulla',
-                              style: textTheme.caption!.copyWith(
+                              style: textTheme.bodySmall!.copyWith(
                                 color: color,
                               ),
                             ),
@@ -157,7 +157,7 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
                                             child: Text(
                                               'LA TUA NUOVA PASSWORD È STATA CAMBIATA!'
                                                   .toUpperCase(),
-                                              style: textTheme.caption!.apply(
+                                              style: textTheme.bodySmall!.apply(
                                                 color: colorScheme.onError,
                                               ),
                                               overflow: TextOverflow.ellipsis,
@@ -178,7 +178,7 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
                             },
                             child: Text(
                               'Salva',
-                              style: textTheme.caption!.copyWith(
+                              style: textTheme.bodySmall!.copyWith(
                                 color: color,
                               ),
                             ),
@@ -207,7 +207,7 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
                         ),
                         Text(
                           displayName ?? '',
-                          style: textTheme.bodyText1,
+                          style: textTheme.bodyLarge,
                         )
                       ],
                     ),

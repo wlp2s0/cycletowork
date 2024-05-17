@@ -66,7 +66,7 @@ class _AdminListCompanyViewState extends State<AdminListCompanyView>
           ),
           title: Text(
             'Aziende',
-            style: textTheme.headline6,
+            style: textTheme.titleLarge,
           ),
         ),
         body: const Center(
@@ -86,7 +86,7 @@ class _AdminListCompanyViewState extends State<AdminListCompanyView>
         ),
         title: Text(
           'Aziende',
-          style: textTheme.headline6,
+          style: textTheme.titleLarge,
         ),
         actions: [
           TextButton.icon(

@@ -46,7 +46,7 @@ class AdminLoginView extends StatelessWidget {
                       child: Center(
                         child: Text(
                           'Accedi con l’indirizzo email',
-                          style: Theme.of(context).textTheme.headline6,
+                          style: Theme.of(context).textTheme.titleLarge,
                         ),
                       ),
                     ),
@@ -97,7 +97,7 @@ class AdminLoginView extends StatelessWidget {
                       margin: const EdgeInsets.only(top: 26.0),
                       child: Text(
                         '(*) Campi obbligatori',
-                        style: Theme.of(context).textTheme.caption,
+                        style: Theme.of(context).textTheme.bodySmall,
                       ),
                     ),
                     Container(

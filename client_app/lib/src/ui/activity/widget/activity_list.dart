@@ -190,7 +190,7 @@ class _ActivityCard extends StatelessWidget {
                                     co2,
                                     style: Theme.of(context)
                                         .textTheme
-                                        .bodyText1!
+                                        .bodyLarge!
                                         .copyWith(
                                           color: infoColor,
                                           fontWeight: FontWeight.w700,
@@ -200,7 +200,7 @@ class _ActivityCard extends StatelessWidget {
                               ),
                               Text(
                                 date,
-                                style: Theme.of(context).textTheme.caption,
+                                style: Theme.of(context).textTheme.bodySmall,
                               ),
                               SizedBox(
                                 width: 205 * scale,
@@ -209,7 +209,7 @@ class _ActivityCard extends StatelessWidget {
                                   overflow: TextOverflow.ellipsis,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .apply(
                                         color: textSecondaryColor,
                                       ),

@@ -36,7 +36,7 @@ class RegisterChallengThanksView extends StatelessWidget {
                         margin: EdgeInsets.only(top: 40.0 * scale),
                         child: Text(
                           'Grazie!'.toUpperCase(),
-                          style: textTheme.headline6!.copyWith(
+                          style: textTheme.titleLarge!.copyWith(
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -53,7 +53,7 @@ class RegisterChallengThanksView extends StatelessWidget {
                     ),
                     child: Text(
                       'L’azienda che hai appena registrato deve essere validata dal nostro team. Ti contatteremo presto via email.',
-                      style: textTheme.caption!.copyWith(
+                      style: textTheme.bodySmall!.copyWith(
                         fontWeight: FontWeight.w400,
                       ),
                       textAlign: TextAlign.center,
@@ -68,7 +68,7 @@ class RegisterChallengThanksView extends StatelessWidget {
                   ),
                   child: Text(
                     'Se lo desideri puoi compilare un breve sondaggio che ci aiuterà a capire qualcosa in più su di te e sul tuo stile ciclistico',
-                    style: textTheme.caption!.copyWith(
+                    style: textTheme.bodySmall!.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.center,
@@ -104,7 +104,7 @@ class RegisterChallengThanksView extends StatelessWidget {
                       ),
                       child: AutoSizeText(
                         'Compila il sondaggio'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: colorScheme.onSecondary,
                         ),
                         maxLines: 1,
@@ -132,7 +132,7 @@ class RegisterChallengThanksView extends StatelessWidget {
                       ),
                       child: AutoSizeText(
                         'Inizia a pedalare'.toUpperCase(),
-                        style: textTheme.button!.copyWith(
+                        style: textTheme.labelLarge!.copyWith(
                           color: colorScheme.secondary,
                         ),
                         maxLines: 1,

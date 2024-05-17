@@ -93,7 +93,7 @@ class _ActivityViewState extends State<ActivityView> {
             ),
             Text(
               AppLocalizations.of(context)!.activity,
-              style: textTheme.headline5,
+              style: textTheme.headlineSmall,
             ),
             SizedBox(
               height: 10 * scale,
@@ -135,7 +135,7 @@ class _ActivityViewState extends State<ActivityView> {
             ),
             Text(
               'Progressi',
-              style: textTheme.headline6,
+              style: textTheme.titleLarge,
             ),
             const SizedBox(
               height: 10,
@@ -213,7 +213,7 @@ class _ActivityViewState extends State<ActivityView> {
             ),
             Text(
               'Risparmio di CO\u2082(${measurementUnit == AppMeasurementUnit.metric ? 'Kg' : 'lb'})',
-              style: textTheme.caption,
+              style: textTheme.bodySmall,
             ),
             Chart(
               type: ChartType.co2,
@@ -227,7 +227,7 @@ class _ActivityViewState extends State<ActivityView> {
             ),
             Text(
               '${measurementUnit == AppMeasurementUnit.metric ? 'Chilometri' : 'Miglia'} percorsi',
-              style: textTheme.caption,
+              style: textTheme.bodySmall,
             ),
             Chart(
               type: ChartType.distant,
@@ -241,7 +241,7 @@ class _ActivityViewState extends State<ActivityView> {
             ),
             Text(
               'Corse',
-              style: textTheme.headline5,
+              style: textTheme.headlineSmall,
             ),
             const SizedBox(
               height: 20.0,
@@ -271,7 +271,7 @@ class _ActivityViewState extends State<ActivityView> {
                 child: Center(
                   child: Text(
                     'Non hai ancora registrato nessuna pedalata',
-                    style: textTheme.headline5!.copyWith(
+                    style: textTheme.headlineSmall!.copyWith(
                       color: colorSchemeExtension.textDisabled,
                     ),
                     textAlign: TextAlign.center,

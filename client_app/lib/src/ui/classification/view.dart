@@ -76,7 +76,7 @@ class _ClassificationViewState extends State<ClassificationView> {
               ),
               Text(
                 'Classifica',
-                style: textTheme.headline5,
+                style: textTheme.headlineSmall,
               ),
               DropdownButton<String>(
                 items: listChallengeName.map((String value) {
@@ -84,7 +84,7 @@ class _ClassificationViewState extends State<ClassificationView> {
                     value: value,
                     child: Text(
                       value,
-                      style: textTheme.caption,
+                      style: textTheme.bodySmall,
                     ),
                   );
                 }).toList(),
@@ -99,12 +99,12 @@ class _ClassificationViewState extends State<ClassificationView> {
           ),
           bottom: TabBar(
             indicatorColor: colorScheme.primary,
-            unselectedLabelStyle: textTheme.caption!.copyWith(
+            unselectedLabelStyle: textTheme.bodySmall!.copyWith(
               fontWeight: FontWeight.w500,
             ),
             unselectedLabelColor: colorSchemeExtension.textSecondary,
             labelColor: colorSchemeExtension.textPrimary,
-            labelStyle: textTheme.caption!.copyWith(
+            labelStyle: textTheme.bodySmall!.copyWith(
               fontWeight: FontWeight.w500,
             ),
             tabs: <Widget>[
@@ -153,7 +153,7 @@ class _EmptyChallenge extends StatelessWidget {
           Center(
             child: Text(
               'Classifica',
-              style: textTheme.headline5,
+              style: textTheme.headlineSmall,
             ),
           ),
           SizedBox(
@@ -170,7 +170,7 @@ class _EmptyChallenge extends StatelessWidget {
             child: Center(
               child: Text(
                 'La classifica è disponibile soltanto se partecipi a una challenge.',
-                style: textTheme.headline5,
+                style: textTheme.headlineSmall,
                 textAlign: TextAlign.center,
               ),
             ),

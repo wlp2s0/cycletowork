@@ -298,7 +298,7 @@ class ViewModel extends ChangeNotifier {
     } else {
       var result = await _repository.getUserInfo();
       if (result == null) {
-        throw ('È stata una anomalia, riprova.');
+        throw ('È stata rilevata un\'anomalia, riprova.');
       }
       AppData.user = result;
       try {

@@ -42,7 +42,7 @@ class LoginEmailResetPasswordView extends StatelessWidget {
                 child: Center(
                   child: Text(
                     'Recupera password',
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
               ),
@@ -70,7 +70,7 @@ class LoginEmailResetPasswordView extends StatelessWidget {
                 margin: EdgeInsets.only(top: 26.0 * scale),
                 child: Text(
                   '(*) Campi obbligatori',
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
               Container(
