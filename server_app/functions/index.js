@@ -66,9 +66,9 @@ const { recursiveDeleteDocs } = require('./service/core');
 admin.initializeApp();
 
 exports.onCreateUser = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .runWith({
-        minInstances: 1,
+        // minInstances: 1,
     })
     .auth.user()
     .onCreate(async (user) => {
@@ -76,7 +76,7 @@ exports.onCreateUser = functions
     });
 
 exports.onCreateUserPhoto = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .storage.object()
     .onFinalize(async (object) => {
         const uid = object.metadata.uid;
@@ -92,7 +92,7 @@ exports.onCreateUserPhoto = functions
     });
 
 exports.scheduledFunction = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .runWith({
         timeoutSeconds: 540,
         memory: '2GB',
@@ -103,7 +103,7 @@ exports.scheduledFunction = functions
     });
 
 exports.updateCompanyPercentRegistered = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .firestore.document(
         `${Constant.challengeCollectionName}/{challengeId}/{companySizeCategory}/{documentId}`
     )
@@ -129,7 +129,7 @@ exports.updateCompanyPercentRegistered = functions
     });
 
 exports.deleteAccount = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -151,7 +151,7 @@ exports.deleteAccount = functions
     });
 
 exports.saveDeviceToken = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         const deviceToken = data.deviceToken;
@@ -185,7 +185,7 @@ exports.saveDeviceToken = functions
     });
 
 exports.removeDeviceToken = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         const deviceToken = data.deviceToken;
@@ -219,9 +219,9 @@ exports.removeDeviceToken = functions
     });
 
 exports.getUserInfo = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .runWith({
-        minInstances: 1,
+        // minInstances: 1,
     })
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
@@ -243,7 +243,7 @@ exports.getUserInfo = functions
     });
 
 exports.saveCompany = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         const company = data.company;
@@ -278,7 +278,7 @@ exports.saveCompany = functions
     });
 
 exports.getCompanyListNameSearchForChalleng = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -326,7 +326,7 @@ exports.getCompanyListNameSearchForChalleng = functions
     });
 
 exports.getCompanyFromName = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -363,7 +363,7 @@ exports.getCompanyFromName = functions
     });
 
 exports.getCompanyFromNameInChallenge = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -404,7 +404,7 @@ exports.getCompanyFromNameInChallenge = functions
     });
 
 exports.getCompanyListForChallenge = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -442,7 +442,7 @@ exports.getCompanyListForChallenge = functions
     });
 
 exports.getCompanyList = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -480,7 +480,7 @@ exports.getCompanyList = functions
     });
 
 exports.getSurveyList = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -518,7 +518,7 @@ exports.getSurveyList = functions
     });
 
 exports.getActiveChallengeList = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -545,7 +545,7 @@ exports.getActiveChallengeList = functions
     });
 
 exports.saveSurveyResponse = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         if (uid) {
@@ -582,7 +582,7 @@ exports.saveSurveyResponse = functions
     });
 
 exports.sendEmailVerificationCode = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         if (uid) {
@@ -624,7 +624,7 @@ exports.sendEmailVerificationCode = functions
     });
 
 exports.verifiyEmailCode = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         if (uid) {
@@ -661,7 +661,7 @@ exports.verifiyEmailCode = functions
     });
 
 exports.registerChallenge = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         loggerLog('registerChallenge, UID:', uid, 'data:', data);
@@ -698,9 +698,9 @@ exports.registerChallenge = functions
     });
 
 exports.saveUserActivity = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .runWith({
-        minInstances: 1,
+        //minInstances: 1,
     })
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
@@ -736,7 +736,7 @@ exports.saveUserActivity = functions
     });
 
 exports.saveUserActivityLocationData = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -785,7 +785,7 @@ exports.saveUserActivityLocationData = functions
     });
 
 exports.getListUserActivity = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -823,7 +823,7 @@ exports.getListUserActivity = functions
     });
 
 exports.getListActiveRegisterdChallenge = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -855,7 +855,7 @@ exports.getListActiveRegisterdChallenge = functions
     });
 
 exports.getListCyclistClassificationByRankingCo2 = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -907,7 +907,7 @@ exports.getListCyclistClassificationByRankingCo2 = functions
     });
 
 exports.getListCompanyClassificationByRankingCo2 = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -966,7 +966,7 @@ exports.getListCompanyClassificationByRankingCo2 = functions
     });
 
 exports.getListCompanyClassificationByRankingPercentRegistered = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -1029,7 +1029,7 @@ exports.getListCompanyClassificationByRankingPercentRegistered = functions
     });
 
 exports.getListDepartmentClassificationByRankingCo2 = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -1095,7 +1095,7 @@ exports.getListDepartmentClassificationByRankingCo2 = functions
     });
 
 exports.getChallengeRegistryFromBusinessEmail = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -1144,7 +1144,7 @@ exports.getChallengeRegistryFromBusinessEmail = functions
     });
 
 exports.getUserCyclistClassification = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -1189,7 +1189,7 @@ exports.getUserCyclistClassification = functions
     });
 
 exports.getUserCompanyClassification = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -1245,7 +1245,7 @@ exports.getUserCompanyClassification = functions
     });
 
 exports.getUserDepartmentClassification = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -1306,7 +1306,7 @@ exports.getUserDepartmentClassification = functions
     });
 
 exports.getListRegisterdChallenge = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -1333,7 +1333,7 @@ exports.getListRegisterdChallenge = functions
     });
 
 exports.updateUserInfo = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         if (uid) {
@@ -1367,7 +1367,7 @@ exports.updateUserInfo = functions
     });
 
 exports.updateUserInfoInChallenge = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         if (uid) {
@@ -1407,7 +1407,7 @@ exports.updateUserInfoInChallenge = functions
 
 // **** ADMIN FUNCTIONS **** //
 exports.getListUserAdmin = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -1456,7 +1456,7 @@ exports.getListUserAdmin = functions
     });
 
 exports.getUserInfoAdmin = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const adminUid = context.auth.uid;
         const uid = data.uid;
@@ -1489,7 +1489,7 @@ exports.getUserInfoAdmin = functions
     });
 
 exports.setAdminUser = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const adminUid = context.auth.uid;
         const uid = data.uid;
@@ -1521,9 +1521,8 @@ exports.setAdminUser = functions
             if (user && listDeviceToken && listDeviceToken.length) {
                 const language = user.language;
                 const congratulation = getString(language, 'congratulation');
-                const title = `${congratulation} ${
-                    user.displayName ? user.displayName : ''
-                }`;
+                const title = `${congratulation} ${user.displayName ? user.displayName : ''
+                    }`;
                 const description = getString(
                     language,
                     'you_have_become_admin'
@@ -1540,7 +1539,7 @@ exports.setAdminUser = functions
     });
 
 exports.verifyUserAdmin = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const adminUid = context.auth.uid;
         const uid = data.uid;
@@ -1572,9 +1571,8 @@ exports.verifyUserAdmin = functions
             if (user && listDeviceToken && listDeviceToken.length) {
                 const language = user.language;
                 const congratulation = getString(language, 'congratulation');
-                const title = `${congratulation} ${
-                    user.displayName ? user.displayName : ''
-                }`;
+                const title = `${congratulation} ${user.displayName ? user.displayName : ''
+                    }`;
                 const description = getString(
                     language,
                     'you_have_been_verified'
@@ -1591,7 +1589,7 @@ exports.verifyUserAdmin = functions
     });
 
 exports.verifyCompanyAdmin = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const adminUid = context.auth.uid;
         const company = data.company;
@@ -1629,17 +1627,15 @@ exports.verifyCompanyAdmin = functions
             if (user && listDeviceToken && listDeviceToken.length) {
                 const language = user.language;
                 const congratulation = getString(language, 'congratulation');
-                const title = `${congratulation} ${
-                    user.displayName ? user.displayName : ''
-                }`;
+                const title = `${congratulation} ${user.displayName ? user.displayName : ''
+                    }`;
                 const theCompany = getString(language, 'the_company');
                 const hasBeenVerified = getString(
                     language,
                     'has_been_verified_for_company'
                 );
-                const description = `${theCompany} ${
-                    company.name
-                } ${hasBeenVerified.toLowerCase()}`;
+                const description = `${theCompany} ${company.name
+                    } ${hasBeenVerified.toLowerCase()}`;
 
                 await sendNotification(listDeviceToken, title, description);
             }
@@ -1659,7 +1655,7 @@ exports.verifyCompanyAdmin = functions
     });
 
 exports.updateCompanyAdmin = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         const company = data.company;
@@ -1700,7 +1696,7 @@ exports.updateCompanyAdmin = functions
     });
 
 exports.saveSurveyAdmin = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         const survey = data.survey;
@@ -1741,7 +1737,7 @@ exports.saveSurveyAdmin = functions
     });
 
 exports.saveChallengeAdmin = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
         const challenge = data.challenge;
@@ -1782,7 +1778,7 @@ exports.saveChallengeAdmin = functions
     });
 
 exports.getChallengeListAdmin = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -1827,7 +1823,7 @@ exports.getChallengeListAdmin = functions
     });
 
 exports.publishChallengeAdmin = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const adminUid = context.auth.uid;
         const challenge = data.challenge;
@@ -1871,7 +1867,7 @@ exports.publishChallengeAdmin = functions
     });
 
 exports.saveUserActivityAdmin = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const adminUid = context.auth.uid;
 
@@ -1904,9 +1900,8 @@ exports.saveUserActivityAdmin = functions
             const listDeviceToken = await getListDeviceToken(uid);
             if (user && listDeviceToken && listDeviceToken.length) {
                 const language = user.language;
-                const title = `${
-                    user.displayName ? user.displayName : 'Novità'
-                }`;
+                const title = `${user.displayName ? user.displayName : 'Novità'
+                    }`;
                 const hasBeenAdded = getString(language, 'it_has_been_added');
                 const hasBeenRemoved = getString(
                     language,
@@ -1935,7 +1930,7 @@ exports.saveUserActivityAdmin = functions
     });
 
 exports.checkUserActivityAdmin = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .runWith({
         timeoutSeconds: 250,
     })
@@ -1970,7 +1965,7 @@ exports.checkUserActivityAdmin = functions
     });
 
 exports.getListRegisterdChallengeForUser = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
@@ -2002,7 +1997,7 @@ exports.getListRegisterdChallengeForUser = functions
     });
 
 exports.getUserCyclistClassificationForUser = functions
-    .region(Constant.appRegion)
+    .region(...Constant.appRegion)
     .https.onCall(async (data, context) => {
         const uid = context.auth.uid;
 
