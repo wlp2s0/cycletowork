@@ -7,9 +7,9 @@ import 'package:provider/provider.dart';
 class AdminLoginView extends StatelessWidget {
   final bool loading;
   const AdminLoginView({
-    Key? key,
+    super.key,
     this.loading = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

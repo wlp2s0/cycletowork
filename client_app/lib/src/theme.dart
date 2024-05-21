@@ -22,29 +22,27 @@ class AppTheme {
         onError: colorScheme.onError,
         errorContainer: colorScheme.errorContainer,
         onErrorContainer: colorScheme.onErrorContainer,
-        background: colorScheme.background,
-        onBackground: colorScheme.onBackground,
         surface: colorScheme.surface,
         onSurface: colorScheme.onSurface,
       ),
-      scaffoldBackgroundColor: colorScheme.background,
+      scaffoldBackgroundColor: colorScheme.surface,
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: colorScheme.primary,
       ),
       appBarTheme: AppBarTheme(
         elevation: 1,
-        backgroundColor: colorScheme.background,
+        backgroundColor: colorScheme.surface,
         iconTheme: IconThemeData(
-          color: colorScheme.onBackground,
+          color: colorScheme.onSurface,
         ),
         toolbarTextStyle: TextStyle(
-          color: colorScheme.onBackground,
+          color: colorScheme.onSurface,
         ),
         titleTextStyle: TextStyle(
-          color: colorScheme.onBackground,
+          color: colorScheme.onSurface,
         ),
         actionsIconTheme: IconThemeData(
-          color: colorScheme.onBackground,
+          color: colorScheme.onSurface,
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -100,7 +98,7 @@ class AppTheme {
         ),
       ),
       chipTheme: ChipThemeData(
-        backgroundColor: colorScheme.background,
+        backgroundColor: colorScheme.surface,
         selectedColor: colorScheme.actionSelected,
         shape: RoundedRectangleBorder(
           borderRadius: const BorderRadius.all(
@@ -145,29 +143,27 @@ class AppTheme {
         onError: colorScheme.onError,
         errorContainer: colorScheme.errorContainer,
         onErrorContainer: colorScheme.onErrorContainer,
-        background: colorScheme.background,
-        onBackground: colorScheme.onBackground,
         surface: colorScheme.surface,
         onSurface: colorScheme.onSurface,
       ),
-      scaffoldBackgroundColor: colorScheme.background,
+      scaffoldBackgroundColor: colorScheme.surface,
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: colorScheme.primary,
       ),
       appBarTheme: AppBarTheme(
         elevation: 1,
-        backgroundColor: colorScheme.background,
+        backgroundColor: colorScheme.surface,
         iconTheme: IconThemeData(
-          color: colorScheme.onBackground,
+          color: colorScheme.onSurface,
         ),
         toolbarTextStyle: TextStyle(
-          color: colorScheme.onBackground,
+          color: colorScheme.onSurface,
         ),
         titleTextStyle: TextStyle(
-          color: colorScheme.onBackground,
+          color: colorScheme.onSurface,
         ),
         actionsIconTheme: IconThemeData(
-          color: colorScheme.onBackground,
+          color: colorScheme.onSurface,
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -223,7 +219,7 @@ class AppTheme {
         ),
       ),
       chipTheme: ChipThemeData(
-        backgroundColor: colorScheme.background,
+        backgroundColor: colorScheme.surface,
         selectedColor: colorScheme.actionSelected,
         shape: RoundedRectangleBorder(
           borderRadius: const BorderRadius.all(

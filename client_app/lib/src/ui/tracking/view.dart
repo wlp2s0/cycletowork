@@ -16,13 +16,13 @@ class TrackingView extends StatelessWidget {
   final String errorMessage;
 
   const TrackingView({
-    Key? key,
+    super.key,
     required this.pauseTracking,
     required this.showMap,
     required this.workout,
     required this.error,
     required this.errorMessage,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -188,27 +188,27 @@ class TrackingView extends StatelessWidget {
       case ActivityType.inVehicle:
         return Icon(
           Icons.directions_car_filled_outlined,
-          color: colorScheme.onBackground.withOpacity(opacity),
+          color: colorScheme.onSurface.withOpacity(opacity),
         );
       case ActivityType.onBicycle:
         return Icon(
           Icons.directions_bike_rounded,
-          color: colorScheme.onBackground.withOpacity(opacity),
+          color: colorScheme.onSurface.withOpacity(opacity),
         );
       case ActivityType.running:
         return Icon(
           Icons.directions_run_rounded,
-          color: colorScheme.onBackground.withOpacity(opacity),
+          color: colorScheme.onSurface.withOpacity(opacity),
         );
       case ActivityType.walking:
         return Icon(
           Icons.directions_walk_rounded,
-          color: colorScheme.onBackground.withOpacity(opacity),
+          color: colorScheme.onSurface.withOpacity(opacity),
         );
       case ActivityType.still:
         return Icon(
           Icons.boy_rounded,
-          color: colorScheme.onBackground.withOpacity(opacity),
+          color: colorScheme.onSurface.withOpacity(opacity),
         );
       case ActivityType.unknown:
         return Container();
@@ -228,7 +228,7 @@ class TrackingView extends StatelessWidget {
 }
 
 class _Divider extends StatelessWidget {
-  const _Divider({Key? key}) : super(key: key);
+  const _Divider();
 
   @override
   Widget build(BuildContext context) {
@@ -252,9 +252,8 @@ class _Divider extends StatelessWidget {
 class _TimeTracking extends StatelessWidget {
   final String time;
   const _TimeTracking({
-    Key? key,
     required this.time,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -288,9 +287,8 @@ class _TimeTracking extends StatelessWidget {
 class _Co2Tracking extends StatelessWidget {
   final String co2;
   const _Co2Tracking({
-    Key? key,
     required this.co2,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -328,9 +326,8 @@ class _Co2Tracking extends StatelessWidget {
 class _DistanceTracking extends StatelessWidget {
   final String distance;
   const _DistanceTracking({
-    Key? key,
     required this.distance,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -368,10 +365,9 @@ class _SpeedTracking extends StatelessWidget {
   final String speed;
   final String avarageSpeed;
   const _SpeedTracking({
-    Key? key,
     required this.speed,
     required this.avarageSpeed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

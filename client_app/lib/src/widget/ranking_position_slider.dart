@@ -11,11 +11,11 @@ class RankingPositionSlider extends StatelessWidget {
   final bool isEmpty;
 
   const RankingPositionSlider({
-    Key? key,
+    super.key,
     required this.ranking,
     required this.title,
     required this.isEmpty,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class RankingPositionSlider extends StatelessWidget {
                       letterSpacing: 0.15,
                       fontStyle: FontStyle.normal,
                       fontWeight: FontWeight.w500,
-                      color: colorScheme.onBackground,
+                      color: colorScheme.onSurface,
                     ),
                   ),
                 ),
@@ -83,7 +83,9 @@ class RankingPositionSlider extends StatelessWidget {
                   'assets/icons/biking.svg',
                   height: 40 * scale,
                   width: 40 * scale,
-                  color: colorScheme.onBackground,
+                  theme: SvgTheme(
+                    currentColor: colorScheme.onSurface,
+                  ),
                 ),
               ),
             ],

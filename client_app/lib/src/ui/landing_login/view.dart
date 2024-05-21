@@ -11,9 +11,9 @@ import 'package:cycletowork/src/widget/button.dart';
 class LoginView extends StatelessWidget {
   final bool loading;
   const LoginView({
-    Key? key,
+    super.key,
     this.loading = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

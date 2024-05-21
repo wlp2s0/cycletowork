@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ClassificationView extends StatefulWidget {
-  const ClassificationView({Key? key}) : super(key: key);
+  const ClassificationView({super.key});
 
   @override
   State<ClassificationView> createState() => _ClassificationViewState();
@@ -134,7 +134,7 @@ class _ClassificationViewState extends State<ClassificationView> {
 }
 
 class _EmptyChallenge extends StatelessWidget {
-  const _EmptyChallenge({Key? key}) : super(key: key);
+  const _EmptyChallenge();
 
   @override
   Widget build(BuildContext context) {
@@ -142,7 +142,7 @@ class _EmptyChallenge extends StatelessWidget {
     var colorScheme = Theme.of(context).colorScheme;
     var textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: colorScheme.background,
+      backgroundColor: colorScheme.surface,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,

@@ -12,10 +12,10 @@ class ActivityList extends StatelessWidget {
   final Function(UserActivity) onUserActivityClick;
 
   const ActivityList({
-    Key? key,
+    super.key,
     required this.userActivity,
     required this.onUserActivityClick,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +86,6 @@ class _ActivityCard extends StatelessWidget {
   final Function() onTap;
 
   const _ActivityCard({
-    Key? key,
     required this.map,
     required this.co2,
     required this.date,
@@ -94,7 +93,7 @@ class _ActivityCard extends StatelessWidget {
     required this.isChallenge,
     required this.isUploaded,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -111,11 +110,12 @@ class _ActivityCard extends StatelessWidget {
       child: Stack(
         children: [
           Material(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).colorScheme.surface,
             child: InkWell(
               borderRadius: BorderRadius.all(
                 Radius.circular(15.0 * scale),
               ),
+              onTap: onTap,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -140,10 +140,10 @@ class _ActivityCard extends StatelessWidget {
                               ? Stack(
                                   children: [
                                     ClipRRect(
-                                      child: map!,
                                       borderRadius: BorderRadius.all(
                                         Radius.circular(10 * scale),
                                       ),
+                                      child: map!,
                                     ),
                                     if (isChallenge)
                                       Align(
@@ -157,7 +157,9 @@ class _ActivityCard extends StatelessWidget {
                                             'assets/icons/challenge.svg',
                                             height: 15.0 * scale,
                                             width: 15.0 * scale,
-                                            color: infoColor,
+                                            theme: SvgTheme(
+                                              currentColor: infoColor,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -181,7 +183,9 @@ class _ActivityCard extends StatelessWidget {
                                     'assets/icons/co2.svg',
                                     height: 24.0 * scale,
                                     width: 24.0 * scale,
-                                    color: infoColor,
+                                    theme: SvgTheme(
+                                      currentColor: infoColor,
+                                    ),
                                   ),
                                   SizedBox(
                                     width: 6 * scale,
@@ -228,7 +232,6 @@ class _ActivityCard extends StatelessWidget {
                   ),
                 ],
               ),
-              onTap: onTap,
             ),
           ),
           if (!isUploaded)

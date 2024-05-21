@@ -102,14 +102,14 @@ class ConfirmChallengeDialog {
                         child: ElevatedButton(
                           onPressed: () => Navigator.of(context).pop(true),
                           style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
+                            shape:
+                                WidgetStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.circular(8.0 * scale),
                               ),
                             ),
-                            backgroundColor: MaterialStateProperty.all<Color>(
+                            backgroundColor: WidgetStateProperty.all<Color>(
                               colorScheme.secondary,
                             ),
                           ),
@@ -131,8 +131,8 @@ class ConfirmChallengeDialog {
                         child: ElevatedButton(
                           onPressed: () => Navigator.of(context).pop(),
                           style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
+                            shape:
+                                WidgetStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.circular(8.0 * scale),

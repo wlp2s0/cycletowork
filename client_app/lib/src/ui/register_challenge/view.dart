@@ -16,9 +16,9 @@ import 'package:provider/provider.dart';
 class RegisterChallengeView extends StatelessWidget {
   final Challenge challenge;
   const RegisterChallengeView({
-    Key? key,
+    super.key,
     required this.challenge,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

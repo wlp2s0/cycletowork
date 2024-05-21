@@ -20,12 +20,12 @@ class TrackingMapView extends StatefulWidget {
   final GestureTapCancelCallback? hiddenMap;
 
   const TrackingMapView({
-    Key? key,
+    super.key,
     required this.workout,
     required this.isChallenge,
     this.pauseTracking,
     this.hiddenMap,
-  }) : super(key: key);
+  });
 
   @override
   State<TrackingMapView> createState() => _TrackingMapViewState();
@@ -124,13 +124,13 @@ class _TrackingMapViewState extends State<TrackingMapView> {
               bottomRight: Radius.circular(10.0),
             ),
             child: SlidingUpPanel(
-              backdropColor: Theme.of(context).colorScheme.background,
+              backdropColor: Theme.of(context).colorScheme.surface,
               maxHeight: 268.0 * scale,
               minHeight: 155.0 * scale,
               parallaxEnabled: true,
               parallaxOffset: 0.2,
               defaultPanelState: PanelState.OPEN,
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).colorScheme.surface,
               panelBuilder: (sc) => Column(
                 children: <Widget>[
                   Row(
@@ -181,7 +181,7 @@ class _TrackingMapViewState extends State<TrackingMapView> {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: 120.0 * scale,
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).colorScheme.surface,
               padding: EdgeInsets.symmetric(
                 horizontal: 24.0 * scale,
                 vertical: 20.0 * scale,
@@ -265,9 +265,8 @@ class _TrackingMapViewState extends State<TrackingMapView> {
 class _Co2Tracking extends StatelessWidget {
   final String co2;
   const _Co2Tracking({
-    Key? key,
     required this.co2,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class LandingView extends StatefulWidget {
-  const LandingView({Key? key}) : super(key: key);
+  const LandingView({super.key});
 
   @override
   State<LandingView> createState() => _LandingViewState();

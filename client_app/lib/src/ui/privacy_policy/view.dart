@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class PrivacyPolicyView extends StatelessWidget {
-  const PrivacyPolicyView({super.key});
-  final privacyPolicyUrl = 'https://cycletowork.mondora.com/privacy-policy';
+  PrivacyPolicyView({super.key});
+
+  final controller = WebViewController()
+    ..setJavaScriptMode(JavaScriptMode.unrestricted)
+    ..loadRequest(
+      Uri.parse("https://cycletowork.mondora.com/privacy-policy"),
+    );
+
   @override
   Widget build(BuildContext context) {
     var colorScheme = Theme.of(context).colorScheme;
@@ -20,15 +26,14 @@ class PrivacyPolicyView extends StatelessWidget {
           splashRadius: 25.0,
           icon: Icon(
             Icons.arrow_back_ios,
-            color: colorScheme.onBackground,
+            color: colorScheme.onSurface,
             size: 20,
           ),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
-      body: WebView(
-        javascriptMode: JavascriptMode.unrestricted,
-        initialUrl: privacyPolicyUrl,
+      body: WebViewWidget(
+        controller: controller,
       ),
     );
   }

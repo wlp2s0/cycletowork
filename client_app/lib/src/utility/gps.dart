@@ -97,7 +97,7 @@ class Gps {
         speedAccuracy: result.speedAccuracy,
         bearing: result.heading,
         time: result.timestamp != null
-            ? result.timestamp!.toLocal().millisecondsSinceEpoch
+            ? result.timestamp.toLocal().millisecondsSinceEpoch
             : DateTime.now().toLocal().millisecondsSinceEpoch,
       );
     } catch (e) {
@@ -170,7 +170,7 @@ class Gps {
           speedAccuracy: result.speedAccuracy,
           bearing: result.heading,
           time: result.timestamp != null
-              ? result.timestamp!.toLocal().millisecondsSinceEpoch
+              ? result.timestamp.toLocal().millisecondsSinceEpoch
               : DateTime.now().toLocal().millisecondsSinceEpoch,
         );
       },
@@ -182,7 +182,6 @@ class Gps {
     List<Placemark> placemarks = await placemarkFromCoordinates(
       latitude,
       longitude,
-      localeIdentifier: localeIdentifier,
     );
     return placemarks.first.locality ??
         placemarks.first.administrativeArea ??

@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class RegisterChallengCompanyDataView extends StatefulWidget {
-  const RegisterChallengCompanyDataView({Key? key}) : super(key: key);
+  const RegisterChallengCompanyDataView({super.key});
 
   @override
   State<RegisterChallengCompanyDataView> createState() =>
@@ -63,7 +63,7 @@ class _RegisterChallengCompanyDataViewState
           splashRadius: 25.0,
           icon: Icon(
             Icons.arrow_back_ios,
-            color: colorScheme.onBackground,
+            color: colorScheme.onSurface,
             size: 20,
           ),
           onPressed: () => viewModel.backToChampionRegistration(),
@@ -645,7 +645,7 @@ class _RegisterChallengCompanyDataViewState
                                         await Navigator.of(context).push(
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                const PrivacyPolicyView(),
+                                                PrivacyPolicyView(),
                                           ),
                                         );
                                       },
@@ -694,13 +694,12 @@ class _RegisterChallengCompanyDataViewState
                             }
                           : null,
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           acceptPrivacy && responsedQuestions
                               ? colorScheme.secondary
                               : colorSchemeExtension.textDisabled
@@ -729,8 +728,7 @@ class _RegisterChallengCompanyDataViewState
                     child: OutlinedButton(
                       onPressed: viewModel.backToChampionRegistration,
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                             side: BorderSide(
@@ -738,10 +736,10 @@ class _RegisterChallengCompanyDataViewState
                             ),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           colorScheme.onSecondary,
                         ),
-                        overlayColor: MaterialStateProperty.all<Color>(
+                        overlayColor: WidgetStateProperty.all<Color>(
                           colorScheme.secondary.withOpacity(0.40),
                         ),
                       ),

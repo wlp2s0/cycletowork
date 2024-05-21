@@ -74,7 +74,7 @@ class PersonalDataManagementView extends StatelessWidget {
                 splashRadius: 25.0,
                 icon: Icon(
                   Icons.arrow_back_ios,
-                  color: colorScheme.onBackground,
+                  color: colorScheme.onSurface,
                   size: 20,
                 ),
                 onPressed: () => Navigator.of(context).pop(),
@@ -145,12 +145,12 @@ class PersonalDataManagementView extends StatelessWidget {
                         },
                         style: ButtonStyle(
                           shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                              WidgetStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
-                          backgroundColor: MaterialStateProperty.all<Color>(
+                          backgroundColor: WidgetStateProperty.all<Color>(
                             colorScheme.secondary,
                           ),
                         ),

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class AdminLandingView extends StatelessWidget {
-  const AdminLandingView({Key? key}) : super(key: key);
+  const AdminLandingView({super.key});
 
   @override
   Widget build(BuildContext context) {

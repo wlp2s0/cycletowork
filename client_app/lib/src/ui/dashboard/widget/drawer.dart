@@ -12,10 +12,10 @@ class AppDrawer extends StatelessWidget {
   final double closeSize = 40.0;
   final fiabWorld = 'https://www.fiabitalia.it';
   const AppDrawer({
-    Key? key,
+    super.key,
     required this.menuOption,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class AppDrawer extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final colorScheme = Theme.of(context).colorScheme;
     return Drawer(
-      backgroundColor: colorScheme.background,
+      backgroundColor: colorScheme.surface,
       width: screenWidth * 0.85,
       child: Stack(
         children: [
@@ -53,7 +53,7 @@ class AppDrawer extends StatelessWidget {
                           'assets/icons/close.svg',
                           height: closeSize,
                           width: closeSize,
-                          color: colorScheme.onBackground,
+                          color: colorScheme.onSurface,
                         ),
                       ),
                     ),
@@ -73,11 +73,11 @@ class AppDrawer extends StatelessWidget {
                           scale,
                           menuOption == item
                               ? Colors.black
-                              : colorScheme.onBackground,
+                              : colorScheme.onSurface,
                           Theme.of(context).textTheme.bodyLarge!.apply(
                                 color: menuOption == item
                                     ? Colors.black
-                                    : colorScheme.onBackground,
+                                    : colorScheme.onSurface,
                               ),
                         ).title,
                         icon: _ItemInfo(
@@ -85,11 +85,11 @@ class AppDrawer extends StatelessWidget {
                           scale,
                           menuOption == item
                               ? Colors.black
-                              : colorScheme.onBackground,
+                              : colorScheme.onSurface,
                           Theme.of(context).textTheme.bodyLarge!.apply(
                                 color: menuOption == item
                                     ? Colors.black
-                                    : colorScheme.onBackground,
+                                    : colorScheme.onSurface,
                               ),
                         ).icon,
                         onPressed: () {
@@ -148,7 +148,7 @@ class AppDrawer extends StatelessWidget {
               ),
               child: Image.asset(
                 'assets/images/mondora_logo.png',
-                color: colorScheme.onBackground,
+                color: colorScheme.onSurface,
               ),
             ),
           ),
@@ -164,12 +164,11 @@ class _AppDrawerItem extends StatelessWidget {
   final Widget icon;
   final GestureTapCallback? onPressed;
   const _AppDrawerItem({
-    Key? key,
     required this.selected,
     required this.title,
     required this.icon,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -224,7 +223,9 @@ class _ItemInfo {
           'assets/icons/home.svg',
           height: iconSize,
           width: iconSize,
-          color: color,
+          theme: SvgTheme(
+            currentColor: color,
+          ),
         );
         break;
       case AppMenuOption.classification:
@@ -236,7 +237,9 @@ class _ItemInfo {
           'assets/icons/classification.svg',
           height: iconSize,
           width: iconSize,
-          color: color,
+          theme: SvgTheme(
+            currentColor: color,
+          ),
         );
         break;
       case AppMenuOption.activity:
@@ -248,7 +251,9 @@ class _ItemInfo {
           'assets/icons/activity.svg',
           height: iconSize,
           width: iconSize,
-          color: color,
+          theme: SvgTheme(
+            currentColor: color,
+          ),
         );
         break;
       case AppMenuOption.profile:
@@ -260,7 +265,9 @@ class _ItemInfo {
           'assets/icons/profile.svg',
           height: iconSize,
           width: iconSize,
-          color: color,
+          theme: SvgTheme(
+            currentColor: color,
+          ),
         );
         break;
       case AppMenuOption.settings:
@@ -272,7 +279,9 @@ class _ItemInfo {
           'assets/icons/settings.svg',
           height: iconSize,
           width: iconSize,
-          color: color,
+          theme: SvgTheme(
+            currentColor: color,
+          ),
         );
         break;
       case AppMenuOption.information:
@@ -284,7 +293,9 @@ class _ItemInfo {
           'assets/icons/information.svg',
           height: iconSize,
           width: iconSize,
-          color: color,
+          theme: SvgTheme(
+            currentColor: color,
+          ),
         );
         break;
       case AppMenuOption.logout:
@@ -296,7 +307,9 @@ class _ItemInfo {
           'assets/icons/logout.svg',
           height: iconSize,
           width: iconSize,
-          color: color,
+          theme: SvgTheme(
+            currentColor: color,
+          ),
         );
         break;
     }

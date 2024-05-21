@@ -9,11 +9,11 @@ class SummaryCard extends StatelessWidget {
   final String distance;
   final String averageSpeed;
   const SummaryCard({
-    Key? key,
+    super.key,
     required this.co2,
     required this.distance,
     required this.averageSpeed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,9 @@ class SummaryCard extends StatelessWidget {
               'assets/icons/co2.svg',
               height: 56.0 * scale,
               width: 56.0 * scale,
-              color: infoColor,
+              theme: SvgTheme(
+                currentColor: infoColor,
+              ),
             ),
             SizedBox(
               width: 6 * scale,

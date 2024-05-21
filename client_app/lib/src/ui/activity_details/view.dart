@@ -21,9 +21,9 @@ class ActivityDetailsView extends StatefulWidget {
   final UserActivity userActivity;
 
   const ActivityDetailsView({
-    Key? key,
+    super.key,
     required this.userActivity,
-  }) : super(key: key);
+  });
 
   @override
   State<ActivityDetailsView> createState() => _ActivityDetailsViewState();
@@ -127,7 +127,7 @@ class _ActivityDetailsViewState extends State<ActivityDetailsView> {
                 splashRadius: 25.0 * scale,
                 icon: Icon(
                   Icons.arrow_back_ios,
-                  color: colorScheme.onBackground,
+                  color: colorScheme.onSurface,
                   size: 20 * scale,
                 ),
                 onPressed: () => Navigator.of(context).pop(),
@@ -308,7 +308,9 @@ class _ActivityDetailsViewState extends State<ActivityDetailsView> {
                           'assets/icons/co2.svg',
                           height: 46.0 * scale,
                           width: 46.0 * scale,
-                          color: colorScheme.onSecondary,
+                          theme: SvgTheme(
+                            currentColor: colorScheme.onSecondary,
+                          ),
                         ),
                         const SizedBox(
                           width: 10,
@@ -520,9 +522,7 @@ class _ActivityDetailsViewState extends State<ActivityDetailsView> {
                     chartData: listLocationData
                         .map(
                           (position) => ChartData(
-                            DateTime.fromMillisecondsSinceEpoch(
-                              position.time.toInt(),
-                            ),
+                            position.time.toDouble(),
                             measurementUnit == AppMeasurementUnit.metric
                                 ? position.speed.meterPerSecondToKmPerHour()
                                 : position.speed.meterPerSecondToMilePerHour(),
@@ -543,9 +543,7 @@ class _ActivityDetailsViewState extends State<ActivityDetailsView> {
                     chartData: listLocationData
                         .map(
                           (position) => ChartData(
-                            DateTime.fromMillisecondsSinceEpoch(
-                              position.time.toInt(),
-                            ),
+                            position.time.toDouble(),
                             measurementUnit == AppMeasurementUnit.metric
                                 ? position.altitude
                                 : position.altitude.meterToFoot(),
@@ -629,12 +627,11 @@ class _Item extends StatelessWidget {
   final String value;
   final String? unit;
   const _Item({
-    Key? key,
     required this.imagePath,
     required this.title,
     required this.value,
     this.unit,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

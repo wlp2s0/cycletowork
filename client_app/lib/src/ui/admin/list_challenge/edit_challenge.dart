@@ -179,7 +179,7 @@ class EditChallengeDialog {
                                       return Theme(
                                         data: Theme.of(context).copyWith(
                                           colorScheme: colorScheme.copyWith(
-                                            onPrimary: colorScheme.onBackground,
+                                            onPrimary: colorScheme.onSurface,
                                           ),
                                         ),
                                         child: child!,

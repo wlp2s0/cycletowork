@@ -19,12 +19,12 @@ class TrackingPauseView extends StatefulWidget {
   final GestureTapCancelCallback? stopTracking;
 
   const TrackingPauseView({
-    Key? key,
+    super.key,
     required this.workout,
     required this.isChallenge,
     required this.playTracking,
     required this.stopTracking,
-  }) : super(key: key);
+  });
 
   @override
   State<TrackingPauseView> createState() => _TrackingPauseViewState();
@@ -106,13 +106,13 @@ class _TrackingPauseViewState extends State<TrackingPauseView> {
               bottomRight: Radius.circular(10.0),
             ),
             child: SlidingUpPanel(
-              backdropColor: Theme.of(context).colorScheme.background,
+              backdropColor: Theme.of(context).colorScheme.surface,
               maxHeight: 275.08 * scale,
               minHeight: 155.0 * scale,
               parallaxEnabled: true,
               parallaxOffset: 0.2,
               defaultPanelState: PanelState.OPEN,
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).colorScheme.surface,
               panelBuilder: (sc) => Column(
                 children: <Widget>[
                   Row(
@@ -158,7 +158,7 @@ class _TrackingPauseViewState extends State<TrackingPauseView> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).colorScheme.surface,
               padding: EdgeInsets.symmetric(
                 horizontal: 24.0 * scale,
                 vertical: 20.0 * scale,
@@ -211,7 +211,9 @@ class _TrackingPauseViewState extends State<TrackingPauseView> {
                           'assets/icons/map.svg',
                           height: 32.0 * scale,
                           width: 27.0 * scale,
-                          color: Colors.grey[600],
+                          theme: SvgTheme(
+                            currentColor: Colors.grey.shade600,
+                          ),
                         ),
                       ),
                     ),
@@ -232,12 +234,11 @@ class _SummeryCard extends StatelessWidget {
   final String distant;
   final String avarageSpeed;
   const _SummeryCard({
-    Key? key,
     required this.time,
     required this.co2,
     required this.distant,
     required this.avarageSpeed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -278,9 +279,8 @@ class _SummeryCard extends StatelessWidget {
 class _TimeTracking extends StatelessWidget {
   final String time;
   const _TimeTracking({
-    Key? key,
     required this.time,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -338,9 +338,8 @@ class _TimeTracking extends StatelessWidget {
 class _Co2Tracking extends StatelessWidget {
   final String co2;
   const _Co2Tracking({
-    Key? key,
     required this.co2,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -402,9 +401,8 @@ class _Co2Tracking extends StatelessWidget {
 class _DistanceTracking extends StatelessWidget {
   final String distance;
   const _DistanceTracking({
-    Key? key,
     required this.distance,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -463,9 +461,8 @@ class _DistanceTracking extends StatelessWidget {
 class _SpeedTracking extends StatelessWidget {
   final String avarageSpeed;
   const _SpeedTracking({
-    Key? key,
     required this.avarageSpeed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

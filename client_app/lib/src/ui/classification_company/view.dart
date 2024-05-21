@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:cycletowork/src/utility/convert.dart';
 
 class ClassificationCompanyView extends StatefulWidget {
-  const ClassificationCompanyView({Key? key}) : super(key: key);
+  const ClassificationCompanyView({super.key});
 
   @override
   State<ClassificationCompanyView> createState() =>
@@ -90,7 +90,9 @@ class _ClassificationCompanyViewState extends State<ClassificationCompanyView> {
         'assets/icons/build.svg',
         height: 18.0 * scale,
         width: 18.0 * scale,
-        color: colorScheme.onSecondary,
+        theme: SvgTheme(
+          currentColor: colorScheme.onSecondary,
+        ),
       ),
     );
     final valueWidget = CircleAvatar(
@@ -99,7 +101,9 @@ class _ClassificationCompanyViewState extends State<ClassificationCompanyView> {
         'assets/icons/build.svg',
         height: 18.0 * scale,
         width: 18.0 * scale,
-        color: colorScheme.onSecondary,
+        theme: SvgTheme(
+          currentColor: colorScheme.onSecondary,
+        ),
       ),
     );
     final isRankingCo2 =
@@ -405,7 +409,6 @@ class _Card extends StatelessWidget {
   final Color color;
 
   const _Card({
-    Key? key,
     required this.ranking,
     required this.title,
     required this.subtitle,
@@ -413,7 +416,7 @@ class _Card extends StatelessWidget {
     required this.isRankingCo2,
     required this.selected,
     required this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -428,7 +431,7 @@ class _Card extends StatelessWidget {
       height: 70.0 * scale,
       color: selected
           ? colorScheme.secondary.withOpacity(0.08)
-          : colorScheme.background,
+          : colorScheme.surface,
       child: Column(
         children: [
           SizedBox(
@@ -469,7 +472,9 @@ class _Card extends StatelessWidget {
                       'assets/icons/build.svg',
                       height: 24.0 * scale,
                       width: 24.0 * scale,
-                      color: colorScheme.onSecondary,
+                      theme: SvgTheme(
+                        currentColor: colorScheme.onSecondary,
+                      ),
                     ),
                   ),
                 ),

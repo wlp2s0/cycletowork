@@ -23,7 +23,7 @@ class AppMap extends StatefulWidget {
   final Function() onCreatedMap;
 
   const AppMap({
-    Key? key,
+    super.key,
     required this.initialLatitude,
     required this.initialLongitude,
     required this.listTrackingPosition,
@@ -36,7 +36,7 @@ class AppMap extends StatefulWidget {
     this.isStatic = false,
     this.padding = 100.0,
     this.onSnapshot,
-  }) : super(key: key);
+  });
 
   @override
   State<AppMap> createState() => AppMapState();
@@ -46,6 +46,8 @@ class AppMapState extends State<AppMap> with WidgetsBindingObserver {
   final Completer<GoogleMapController> _controller = Completer();
   List<Marker> _markers = [];
   List<Polyline> _polyline = [];
+  AppData? appData;
+  String? style;
 
   Future changeCamera(
     double latitude,
@@ -87,8 +89,7 @@ class AppMapState extends State<AppMap> with WidgetsBindingObserver {
     try {
       _markers = [];
 
-      var markerPositionIcon =
-          context.read<AppData>().markerCurrentPositionIcon;
+      var markerPositionIcon = appData?.markerCurrentPositionIcon;
       var markerIcon = BitmapDescriptor.fromBytes(markerPositionIcon!);
       var mark = Marker(
         markerId: const MarkerId('currentPosition'),
@@ -112,8 +113,7 @@ class AppMapState extends State<AppMap> with WidgetsBindingObserver {
   ) {
     try {
       _markers = [];
-      var markerStartPositionIcon =
-          context.read<AppData>().markerStartPositionIcon;
+      var markerStartPositionIcon = appData?.markerStartPositionIcon;
       var markerStartIcon =
           BitmapDescriptor.fromBytes(markerStartPositionIcon!);
       var markStart = Marker(
@@ -122,8 +122,7 @@ class AppMapState extends State<AppMap> with WidgetsBindingObserver {
         icon: markerStartIcon,
         infoWindow: InfoWindow.noText,
       );
-      var markerPositionIcon =
-          context.read<AppData>().markerCurrentPositionIcon;
+      var markerPositionIcon = appData?.markerCurrentPositionIcon;
       var markerIcon = BitmapDescriptor.fromBytes(markerPositionIcon!);
       var mark = Marker(
         markerId: const MarkerId('currentPosition'),
@@ -183,32 +182,21 @@ class AppMapState extends State<AppMap> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    WidgetsBinding.instance.addPostFrameCallback((_) => _setMapStyle());
+    appData = context.read<AppData>();
   }
 
-  Future _setMapStyle() async {
-    try {
-      final controller = await _controller.future;
-      final brightnessTheme = Theme.of(context).brightness;
-      var darkMapStyle = context.read<AppData>().darkMapStyle;
-      if (brightnessTheme == Brightness.dark && darkMapStyle != null) {
-        controller.setMapStyle(darkMapStyle);
-      } else {
-        var lightMapStyle = context.read<AppData>().lightMapStyle;
-        if (lightMapStyle != null) {
-          controller.setMapStyle(lightMapStyle);
-        }
-      }
-    } catch (e) {
-      Logger.error(e);
+  void _initStyle() {
+    if (appData?.darkMapStyle != null &&
+        Theme.of(context).brightness == Brightness.dark) {
+      style = appData!.darkMapStyle;
+    } else if (appData?.lightMapStyle != null) {
+      style = appData!.lightMapStyle;
     }
   }
 
   @override
   void didChangePlatformBrightness() {
-    setState(() {
-      _setMapStyle();
-    });
+    // _initStyle();
   }
 
   @override
@@ -219,6 +207,8 @@ class AppMapState extends State<AppMap> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    _initStyle();
+
     if (widget.isStatic) {
       var colorScheme = Theme.of(context).colorScheme;
       _polyline = [];
@@ -250,12 +240,10 @@ class AppMapState extends State<AppMap> with WidgetsBindingObserver {
 
       var firstPosition = widget.listTrackingPosition.first;
       var lastPosition = widget.listTrackingPosition.last;
-      var markerStartPositionIcon =
-          context.read<AppData>().markerStartPositionIcon;
+      var markerStartPositionIcon = appData?.markerStartPositionIcon;
       var markerStartIcon =
           BitmapDescriptor.fromBytes(markerStartPositionIcon!);
-      var markerStopPositionIcon =
-          context.read<AppData>().markerStopPositionIcon;
+      var markerStopPositionIcon = appData?.markerStopPositionIcon;
       var markerStopIcon = BitmapDescriptor.fromBytes(markerStopPositionIcon!);
       _markers = [];
       var startMark = Marker(
@@ -275,6 +263,7 @@ class AppMapState extends State<AppMap> with WidgetsBindingObserver {
     }
 
     return GoogleMap(
+      style: style,
       mapType: MapType.normal,
       zoomControlsEnabled: false,
       myLocationButtonEnabled: false,

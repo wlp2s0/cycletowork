@@ -9,11 +9,11 @@ class AppGpsIcon extends StatelessWidget {
   final GestureTapCallback? onPressed;
   final bool visible;
   const AppGpsIcon({
-    Key? key,
+    super.key,
     required this.gpsStatus,
     this.onPressed,
     required this.visible,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -12,13 +12,13 @@ class AppBottomNavBar extends StatelessWidget {
   final bool isCenter;
 
   const AppBottomNavBar({
-    Key? key,
+    super.key,
     required this.bottomNavBarOption,
     required this.onChange,
     required this.floatActionButtonEnabled,
     required this.onPressed,
     required this.isCenter,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class AppBottomNavBar extends StatelessWidget {
           padding: EdgeInsets.all(5 * scale),
           decoration: BoxDecoration(
             color: colorScheme.brightness == Brightness.light
-                ? colorScheme.background
+                ? colorScheme.surface
                 : Colors.black,
             borderRadius: BorderRadius.circular(15.0 * scale),
             boxShadow: const [
@@ -60,7 +60,7 @@ class AppBottomNavBar extends StatelessWidget {
                       scale,
                       bottomNavBarOption == item
                           ? Colors.black
-                          : colorScheme.onBackground,
+                          : colorScheme.onSurface,
                     ).icon,
                     onPressed: () {
                       onChange(item);
@@ -80,11 +80,10 @@ class _BottomNavBarItem extends StatelessWidget {
   final Widget icon;
   final GestureTapCallback? onPressed;
   const _BottomNavBarItem({
-    Key? key,
     required this.selected,
     required this.icon,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +92,7 @@ class _BottomNavBarItem extends StatelessWidget {
     final backgroundColor = selected
         ? colorScheme.primary
         : colorScheme.brightness == Brightness.light
-            ? colorScheme.background
+            ? colorScheme.surface
             : Colors.black;
 
     return SizedBox(

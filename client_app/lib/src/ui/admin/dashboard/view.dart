@@ -16,7 +16,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 class AdminDashboardView extends StatefulWidget {
-  const AdminDashboardView({Key? key}) : super(key: key);
+  const AdminDashboardView({super.key});
 
   @override
   State<AdminDashboardView> createState() => _AdminDashboardViewState();
@@ -93,8 +93,7 @@ class _AdminDashboardViewState extends State<AdminDashboardView> {
               centerTitle: true,
               actions: [
                 AppAvatar(
-                  userImageUrl:
-                      AppData.user != null ? AppData.user!.photoURL : null,
+                  userImageUrl: AppData.user?.photoURL,
                   userType: UserType.other,
                   isAdmin: true,
                   onPressed: null,
@@ -140,7 +139,9 @@ class _AdminDashboardViewState extends State<AdminDashboardView> {
                               ),
                               selectedIcon: SvgPicture.asset(
                                 'assets/icons/profile.svg',
-                                color: colorScheme.primary,
+                                theme: SvgTheme(
+                                  currentColor: colorScheme.primary,
+                                ),
                               ),
                               label: const Text('Utenti'),
                             ),
@@ -150,7 +151,9 @@ class _AdminDashboardViewState extends State<AdminDashboardView> {
                               ),
                               selectedIcon: SvgPicture.asset(
                                 'assets/icons/classification.svg',
-                                color: colorScheme.primary,
+                                theme: SvgTheme(
+                                  currentColor: colorScheme.primary,
+                                ),
                               ),
                               label: const Text('Challenge'),
                             ),
@@ -160,7 +163,9 @@ class _AdminDashboardViewState extends State<AdminDashboardView> {
                               ),
                               selectedIcon: SvgPicture.asset(
                                 'assets/icons/survey.svg',
-                                color: colorScheme.primary,
+                                theme: SvgTheme(
+                                  currentColor: colorScheme.primary,
+                                ),
                               ),
                               label: const Text('Sondagio'),
                             ),
@@ -170,7 +175,9 @@ class _AdminDashboardViewState extends State<AdminDashboardView> {
                               ),
                               selectedIcon: SvgPicture.asset(
                                 'assets/icons/company.svg',
-                                color: colorScheme.primary,
+                                theme: SvgTheme(
+                                  currentColor: colorScheme.primary,
+                                ),
                               ),
                               label: const Text('Azienda'),
                             ),

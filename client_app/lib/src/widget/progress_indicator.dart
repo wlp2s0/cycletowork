@@ -11,11 +11,11 @@ class AppProgressIndicator extends StatelessWidget {
   final Color? color;
 
   const AppProgressIndicator({
-    Key? key,
+    super.key,
     this.radius = 20.0,
     this.androidStrokeWidth = 4.0,
     this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

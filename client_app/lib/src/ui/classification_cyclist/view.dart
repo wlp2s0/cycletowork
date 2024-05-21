@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:cycletowork/src/utility/convert.dart';
 
 class CyclistCompanyView extends StatefulWidget {
-  const CyclistCompanyView({Key? key}) : super(key: key);
+  const CyclistCompanyView({super.key});
 
   @override
   State<CyclistCompanyView> createState() => _CyclistCompanyViewState();
@@ -323,7 +323,6 @@ class _Card extends StatelessWidget {
   final String? photoURL;
 
   const _Card({
-    Key? key,
     required this.ranking,
     required this.title,
     required this.subtitle,
@@ -332,7 +331,7 @@ class _Card extends StatelessWidget {
     required this.selected,
     required this.color,
     this.photoURL,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -347,7 +346,7 @@ class _Card extends StatelessWidget {
       height: 70.0 * scale,
       color: selected
           ? colorScheme.secondary.withOpacity(0.08)
-          : colorScheme.background,
+          : colorScheme.surface,
       child: Column(
         children: [
           SizedBox(

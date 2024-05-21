@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class AdminListCompanyView extends StatefulWidget {
-  const AdminListCompanyView({Key? key}) : super(key: key);
+  const AdminListCompanyView({super.key});
 
   @override
   State<AdminListCompanyView> createState() => _AdminListCompanyViewState();
@@ -235,7 +235,7 @@ class _TableDataSource extends DataTableSource {
   DataRow getRow(int index) {
     final company = data[index];
     return DataRow.byIndex(
-      color: MaterialStateProperty.resolveWith(
+      color: WidgetStateProperty.resolveWith(
         (Set states) {
           return null;
         },
@@ -313,15 +313,15 @@ class _TableDataSource extends DataTableSource {
           Tooltip(
             message: 'HA DIPARTIMENTI',
             child: company.hasMoreDepartment == true
-                ? Row(
-                    children: const [
+                ? const Row(
+                    children: [
                       Text('SI'),
                       SizedBox(width: 10),
                       Icon(Icons.apartment),
                     ],
                   )
-                : Row(
-                    children: const [
+                : const Row(
+                    children: [
                       Text('NO'),
                       SizedBox(width: 10),
                       Icon(Icons.domain_disabled),

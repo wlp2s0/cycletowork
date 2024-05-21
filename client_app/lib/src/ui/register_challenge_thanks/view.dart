@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class RegisterChallengThanksView extends StatelessWidget {
-  const RegisterChallengThanksView({Key? key}) : super(key: key);
+  const RegisterChallengThanksView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -92,13 +92,12 @@ class RegisterChallengThanksView extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: viewModel.gotoSurvey,
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           colorScheme.secondary,
                         ),
                       ),
@@ -120,8 +119,7 @@ class RegisterChallengThanksView extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () => Navigator.pop(context),
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                             side: BorderSide(

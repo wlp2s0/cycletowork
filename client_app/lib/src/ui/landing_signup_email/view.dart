@@ -10,8 +10,8 @@ import 'package:provider/provider.dart';
 
 class SignupEmailView extends StatefulWidget {
   const SignupEmailView({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<SignupEmailView> createState() => _SignupEmailViewState();
@@ -27,7 +27,7 @@ class _SignupEmailViewState extends State<SignupEmailView> {
   @override
   Widget build(BuildContext context) {
     var scale = context.read<AppData>().scale;
-    final onBackgroundColor = Theme.of(context).colorScheme.onBackground;
+    final onBackgroundColor = Theme.of(context).colorScheme.onSurface;
     final landingModel = Provider.of<ViewModel>(context);
     var loading = landingModel.uiState.loading;
     final colorScheme = Theme.of(context).colorScheme;
@@ -188,7 +188,7 @@ class _SignupEmailViewState extends State<SignupEmailView> {
                           ..onTap = () async {
                             await Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => const PrivacyPolicyView(),
+                                builder: (context) => PrivacyPolicyView(),
                               ),
                             );
                           },

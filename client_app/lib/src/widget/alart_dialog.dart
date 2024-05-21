@@ -96,7 +96,7 @@ class AppAlartDialog {
     if (justContent) {
       return showGeneralDialog(
         context: context,
-        barrierColor: Theme.of(context).colorScheme.background,
+        barrierColor: Theme.of(context).colorScheme.surface,
         barrierDismissible: barrierDismissible,
         barrierLabel: 'Dialog',
         transitionDuration: const Duration(milliseconds: 400),

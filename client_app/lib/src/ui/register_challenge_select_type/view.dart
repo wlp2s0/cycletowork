@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 class RegisterChallengSelectTypeView extends StatelessWidget {
-  const RegisterChallengSelectTypeView({Key? key}) : super(key: key);
+  const RegisterChallengSelectTypeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class RegisterChallengSelectTypeView extends StatelessWidget {
           splashRadius: 25.0,
           icon: Icon(
             Icons.arrow_back_ios,
-            color: colorScheme.onBackground,
+            color: colorScheme.onSurface,
             size: 20,
           ),
           onPressed: () => Navigator.of(context).pop(),
@@ -65,7 +65,9 @@ class RegisterChallengSelectTypeView extends StatelessWidget {
                 'assets/icons/biking.svg',
                 height: 75 * scale,
                 width: 75 * scale,
-                color: color,
+                theme: SvgTheme(
+                  currentColor: color,
+                ),
               ),
               SizedBox(
                 height: 29.0 * scale,
@@ -87,12 +89,12 @@ class RegisterChallengSelectTypeView extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: viewModel.gotoCyclistRegistration,
                   style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       colorScheme.secondary,
                     ),
                   ),
@@ -131,7 +133,9 @@ class RegisterChallengSelectTypeView extends StatelessWidget {
                 'assets/icons/group_biking.svg',
                 height: 80 * scale,
                 width: 483 * scale,
-                color: color,
+                theme: SvgTheme(
+                  currentColor: color,
+                ),
               ),
               SizedBox(
                 height: 20.0 * scale,
@@ -180,12 +184,12 @@ class RegisterChallengSelectTypeView extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: viewModel.gotoChampionRegistration,
                   style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       colorScheme.secondary,
                     ),
                   ),

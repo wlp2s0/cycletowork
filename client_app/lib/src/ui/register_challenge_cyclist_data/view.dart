@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class RegisterChallengCyclistDataView extends StatefulWidget {
-  const RegisterChallengCyclistDataView({Key? key}) : super(key: key);
+  const RegisterChallengCyclistDataView({super.key});
 
   @override
   State<RegisterChallengCyclistDataView> createState() =>
@@ -50,7 +50,7 @@ class _RegisterChallengCyclistDataViewState
           splashRadius: 25.0,
           icon: Icon(
             Icons.arrow_back_ios,
-            color: colorScheme.onBackground,
+            color: colorScheme.onSurface,
             size: 20,
           ),
           onPressed: () => viewModel.gotoCyclistRegistration(),
@@ -409,7 +409,7 @@ class _RegisterChallengCyclistDataViewState
                                         await Navigator.of(context).push(
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                const PrivacyPolicyView(),
+                                                PrivacyPolicyView(),
                                           ),
                                         );
                                       },
@@ -454,13 +454,12 @@ class _RegisterChallengCyclistDataViewState
                             }
                           : null,
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           acceptPrivacy && responsedQuestions
                               ? colorScheme.secondary
                               : colorSchemeExtension.textDisabled
@@ -489,8 +488,7 @@ class _RegisterChallengCyclistDataViewState
                     child: OutlinedButton(
                       onPressed: viewModel.gotoCyclistRegistration,
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                             side: BorderSide(
@@ -498,10 +496,10 @@ class _RegisterChallengCyclistDataViewState
                             ),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           colorScheme.onSecondary,
                         ),
-                        overlayColor: MaterialStateProperty.all<Color>(
+                        overlayColor: WidgetStateProperty.all<Color>(
                           colorScheme.secondary.withOpacity(0.40),
                         ),
                       ),

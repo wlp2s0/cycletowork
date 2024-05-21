@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ProfileView extends StatelessWidget {
-  const ProfileView({Key? key}) : super(key: key);
+  const ProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +21,9 @@ class ProfileView extends StatelessWidget {
     var colorScheme = Theme.of(context).colorScheme;
     var textTheme = Theme.of(context).textTheme;
     final actionColor = colorSchemeExtension.action;
-    final userImageUrl = AppData.user != null ? AppData.user!.photoURL : null;
-    final displayName = AppData.user != null ? AppData.user!.displayName : null;
-    final email = AppData.user != null ? AppData.user!.email : null;
+    final userImageUrl = AppData.user?.photoURL;
+    final displayName = AppData.user?.displayName;
+    final email = AppData.user?.email;
     final isUserUsedEmailProvider = AppData.isUserUsedEmailProvider;
     final color = colorScheme.brightness == Brightness.light
         ? colorScheme.secondary
@@ -161,9 +161,8 @@ class _ChallengeRegisterdData extends StatelessWidget {
   final ChallengeRegistry challengeRegistry;
 
   const _ChallengeRegisterdData({
-    Key? key,
     required this.challengeRegistry,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -316,10 +315,9 @@ class _ListItem extends StatelessWidget {
   final String? value;
 
   const _ListItem({
-    Key? key,
     required this.title,
     required this.value,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

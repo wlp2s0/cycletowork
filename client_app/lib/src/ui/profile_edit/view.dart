@@ -17,9 +17,9 @@ import 'package:flutter/foundation.dart'
 class ProfileEditView extends StatefulWidget {
   final ChallengeRegistry? challengeRegistry;
   const ProfileEditView({
-    Key? key,
+    super.key,
     this.challengeRegistry,
-  }) : super(key: key);
+  });
 
   @override
   State<ProfileEditView> createState() => _ProfileEditViewState();
@@ -35,8 +35,8 @@ class _ProfileEditViewState extends State<ProfileEditView> {
     final colorSchemeExtension =
         Theme.of(context).extension<ColorSchemeExtension>()!;
     final actionColor = colorSchemeExtension.action;
-    final userImageUrl = AppData.user != null ? AppData.user!.photoURL : null;
-    final displayName = AppData.user != null ? AppData.user!.displayName : null;
+    final userImageUrl = AppData.user?.photoURL;
+    final displayName = AppData.user?.displayName;
     final colorScheme = Theme.of(context).colorScheme;
     final color = colorScheme.brightness == Brightness.light
         ? colorScheme.secondary
@@ -271,8 +271,8 @@ class _ProfileEditViewState extends State<ProfileEditView> {
                                 await AppSettings.openAppSettings();
                               }
                             } else {
-                              final ImagePicker _picker = ImagePicker();
-                              final XFile? image = await _picker.pickImage(
+                              final ImagePicker picker = ImagePicker();
+                              final XFile? image = await picker.pickImage(
                                 source: ImageSource.gallery,
                               );
                               if (image != null) {

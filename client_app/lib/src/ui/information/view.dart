@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class InformationView extends StatelessWidget {
-  const InformationView({Key? key}) : super(key: key);
+  const InformationView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class InformationView extends StatelessWidget {
             onPressed: () async {
               await Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const PrivacyPolicyView(),
+                  builder: (context) => PrivacyPolicyView(),
                 ),
               );
             },
@@ -42,8 +42,7 @@ class InformationView extends StatelessWidget {
             onPressed: () async {
               await Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) =>
-                      const MilanoBikeChallengeRegulationsView(),
+                  builder: (context) => MilanoBikeChallengeRegulationsView(),
                 ),
               );
             },
@@ -68,10 +67,9 @@ class _InformationItem extends StatelessWidget {
   final String title;
   final GestureTapCancelCallback? onPressed;
   const _InformationItem({
-    Key? key,
     required this.title,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +96,7 @@ class _InformationItem extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.arrow_forward_ios,
-                        color: colorScheme.onBackground,
+                        color: colorScheme.onSurface,
                         size: 25 * scale,
                       ),
                     ],

@@ -33,13 +33,13 @@ class TrackingStopView extends StatefulWidget {
   final Function(Uint8List?) onSnapshot;
 
   const TrackingStopView({
-    Key? key,
+    super.key,
     required this.workout,
     required this.isChallenge,
     required this.saveTracking,
     required this.removeTracking,
     required this.onSnapshot,
-  }) : super(key: key);
+  });
 
   @override
   State<TrackingStopView> createState() => _TrackingStopViewState();
@@ -179,7 +179,9 @@ class _TrackingStopViewState extends State<TrackingStopView> {
                   'assets/icons/co2.svg',
                   height: 46.0 * scale,
                   width: 46.0 * scale,
-                  color: colorScheme.onSecondary,
+                  theme: SvgTheme(
+                    currentColor: colorScheme.onSecondary,
+                  ),
                 ),
                 const SizedBox(
                   width: 10,
@@ -382,9 +384,7 @@ class _TrackingStopViewState extends State<TrackingStopView> {
             chartData: listLocationData
                 .map(
                   (position) => ChartData(
-                    DateTime.fromMillisecondsSinceEpoch(
-                      position.time.toInt(),
-                    ),
+                    position.time.toDouble(),
                     measurementUnit == AppMeasurementUnit.metric
                         ? position.speed.meterPerSecondToKmPerHour()
                         : position.speed.meterPerSecondToMilePerHour(),
@@ -405,9 +405,7 @@ class _TrackingStopViewState extends State<TrackingStopView> {
             chartData: listLocationData
                 .map(
                   (position) => ChartData(
-                    DateTime.fromMillisecondsSinceEpoch(
-                      position.time.toInt(),
-                    ),
+                    position.time.toDouble(),
                     measurementUnit == AppMeasurementUnit.metric
                         ? position.altitude
                         : position.altitude.meterToFoot(),
@@ -427,7 +425,7 @@ class _TrackingStopViewState extends State<TrackingStopView> {
         child: Container(
           height: 84.0 * scale,
           decoration: BoxDecoration(
-            color: colorScheme.background,
+            color: colorScheme.surface,
             boxShadow: const <BoxShadow>[
               BoxShadow(
                 blurRadius: 8.0,
@@ -577,12 +575,11 @@ class _Item extends StatelessWidget {
   final String value;
   final String? unit;
   const _Item({
-    Key? key,
     required this.imagePath,
     required this.title,
     required this.value,
     this.unit,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

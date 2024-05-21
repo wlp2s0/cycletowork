@@ -6,11 +6,11 @@ class DataColumnSearch extends StatefulWidget {
   final String filter;
 
   const DataColumnSearch({
-    Key? key,
+    super.key,
     required this.title,
     required this.onFilterChange,
     required this.filter,
-  }) : super(key: key);
+  });
 
   @override
   State<DataColumnSearch> createState() => _DataColumnSearchState();

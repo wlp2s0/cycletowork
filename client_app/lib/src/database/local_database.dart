@@ -67,9 +67,9 @@ class LocalDatabase {
   /// [dbName] is name of database (optional).
   Future<Database> open({String dbName = 'cycle2work.db'}) async {
     var databasesPath = await getDatabasesPath();
-    var _path = join(databasesPath, dbName);
+    var path = join(databasesPath, dbName);
     return await openDatabase(
-      _path,
+      path,
       version: 4,
       onConfigure: _onConfigure,
       onCreate: _onCreate,

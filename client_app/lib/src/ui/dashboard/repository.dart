@@ -497,12 +497,12 @@ class Repository {
               userActivity.stopTime < endDate.millisecondsSinceEpoch,
         );
         if (userActivitySelected.isEmpty) {
-          listCo2ChartData.add(ChartData(offsetDay, 0));
-          listDistanceChartData.add(ChartData(offsetDay, 0));
+          listCo2ChartData.add(ChartData(offsetDay.toDouble(), 0));
+          listDistanceChartData.add(ChartData(offsetDay.toDouble(), 0));
         } else {
           listCo2ChartData.add(
             ChartData(
-              offsetDay,
+              offsetDay.toDouble(),
               userActivitySelected
                   .map((e) => e.co2)
                   .reduce((a, b) => a + b)
@@ -511,7 +511,7 @@ class Repository {
           );
           listDistanceChartData.add(
             ChartData(
-              offsetDay,
+              offsetDay.toDouble(),
               userActivitySelected
                   .map((e) => e.distance)
                   .reduce((a, b) => a + b)
@@ -541,12 +541,12 @@ class Repository {
               userActivity.stopTime < endDate.millisecondsSinceEpoch,
         );
         if (userActivitySelected.isEmpty) {
-          listCo2ChartData.add(ChartData(offsetDay, 0));
-          listDistanceChartData.add(ChartData(offsetDay, 0));
+          listCo2ChartData.add(ChartData(offsetDay.toDouble(), 0));
+          listDistanceChartData.add(ChartData(offsetDay.toDouble(), 0));
         } else {
           listCo2ChartData.add(
             ChartData(
-              offsetDay,
+              offsetDay.toDouble(),
               userActivitySelected
                   .map((e) => e.co2)
                   .reduce((a, b) => a + b)
@@ -555,7 +555,7 @@ class Repository {
           );
           listDistanceChartData.add(
             ChartData(
-              offsetDay,
+              offsetDay.toDouble(),
               userActivitySelected
                   .map((e) => e.distance)
                   .reduce((a, b) => a + b)
@@ -581,12 +581,12 @@ class Repository {
               userActivity.stopTime < endDate.millisecondsSinceEpoch,
         );
         if (userActivitySelected.isEmpty) {
-          listCo2ChartData.add(ChartData(offsetMonth, 0));
-          listDistanceChartData.add(ChartData(offsetMonth, 0));
+          listCo2ChartData.add(ChartData(offsetMonth.toDouble(), 0));
+          listDistanceChartData.add(ChartData(offsetMonth.toDouble(), 0));
         } else {
           listCo2ChartData.add(
             ChartData(
-              offsetMonth,
+              offsetMonth.toDouble(),
               userActivitySelected
                   .map((e) => e.co2)
                   .reduce((a, b) => a + b)
@@ -595,7 +595,7 @@ class Repository {
           );
           listDistanceChartData.add(
             ChartData(
-              offsetMonth,
+              offsetMonth.toDouble(),
               userActivitySelected
                   .map((e) => e.distance)
                   .reduce((a, b) => a + b)

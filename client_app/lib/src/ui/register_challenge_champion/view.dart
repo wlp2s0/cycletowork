@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RegisterChallengChampionView extends StatefulWidget {
-  const RegisterChallengChampionView({Key? key}) : super(key: key);
+  const RegisterChallengChampionView({super.key});
 
   @override
   State<RegisterChallengChampionView> createState() =>
@@ -56,7 +56,7 @@ class _RegisterChallengChampionViewState
           splashRadius: 25.0,
           icon: Icon(
             Icons.arrow_back_ios,
-            color: colorScheme.onBackground,
+            color: colorScheme.onSurface,
             size: 20,
           ),
           onPressed: () => viewModel.gotoSelectType(),
@@ -194,13 +194,13 @@ class _RegisterChallengChampionViewState
                               }
                             },
                             style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
+                              shape: WidgetStateProperty.all<
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
-                              overlayColor: MaterialStateProperty.all<Color>(
+                              overlayColor: WidgetStateProperty.all<Color>(
                                 color.withOpacity(0.20),
                               ),
                             ),
@@ -755,13 +755,12 @@ class _RegisterChallengChampionViewState
                         }
                       },
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           colorScheme.secondary,
                         ),
                       ),
@@ -785,8 +784,7 @@ class _RegisterChallengChampionViewState
                     child: OutlinedButton(
                       onPressed: viewModel.gotoSelectType,
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                             side: BorderSide(
@@ -794,10 +792,10 @@ class _RegisterChallengChampionViewState
                             ),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           colorScheme.onSecondary,
                         ),
-                        overlayColor: MaterialStateProperty.all<Color>(
+                        overlayColor: WidgetStateProperty.all<Color>(
                           colorScheme.secondary.withOpacity(0.40),
                         ),
                       ),

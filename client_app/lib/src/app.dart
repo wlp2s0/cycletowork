@@ -9,7 +9,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
 
 class CycleToWorkApp extends StatefulWidget {
-  const CycleToWorkApp({Key? key}) : super(key: key);
+  const CycleToWorkApp({super.key});
 
   @override
   State<CycleToWorkApp> createState() => _CycleToWorkAppState();

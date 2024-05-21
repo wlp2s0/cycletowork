@@ -12,7 +12,7 @@ import 'package:cycletowork/src/utility/convert.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ActivityView extends StatefulWidget {
-  const ActivityView({Key? key}) : super(key: key);
+  const ActivityView({super.key});
 
   @override
   State<ActivityView> createState() => _ActivityViewState();
@@ -79,7 +79,7 @@ class _ActivityViewState extends State<ActivityView> {
         dashboardModel.uiState.listChallengeRegistred.isNotEmpty;
 
     return Scaffold(
-      backgroundColor: colorScheme.background,
+      backgroundColor: colorScheme.surface,
       appBar: AppBar(
         elevation: 4,
         toolbarHeight: isRegistredToChallenge ? 112.0 * scale : 60.0 * scale,
@@ -230,7 +230,7 @@ class _ActivityViewState extends State<ActivityView> {
               style: textTheme.bodySmall,
             ),
             Chart(
-              type: ChartType.distant,
+              type: ChartType.distance,
               chartData: measurementUnit == AppMeasurementUnit.metric
                   ? userActivtyDistanceKmChartData
                   : userActivtyDistanceMileChartData,

@@ -11,8 +11,8 @@ import 'package:provider/provider.dart';
 
 class LoginEmailView extends StatefulWidget {
   const LoginEmailView({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<LoginEmailView> createState() => _LoginEmailViewState();
@@ -27,7 +27,7 @@ class _LoginEmailViewState extends State<LoginEmailView> {
     final scale = context.read<AppData>().scale;
     final isHuaweiDevice = context.read<AppData>().isHuaweiDevice;
     final landingModel = Provider.of<ViewModel>(context);
-    final onBackgroundColor = Theme.of(context).colorScheme.onBackground;
+    final onBackgroundColor = Theme.of(context).colorScheme.onSurface;
     final formKey = GlobalKey<FormState>();
 
     final loading = landingModel.uiState.loading;

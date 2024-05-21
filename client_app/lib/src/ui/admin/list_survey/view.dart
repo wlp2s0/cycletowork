@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class AdminListSurveyView extends StatefulWidget {
-  const AdminListSurveyView({Key? key}) : super(key: key);
+  const AdminListSurveyView({super.key});
 
   @override
   State<AdminListSurveyView> createState() => _AdminListSurveyViewState();
@@ -198,7 +198,7 @@ class _TableDataSource extends DataTableSource {
   DataRow getRow(int index) {
     final survey = data[index];
     return DataRow.byIndex(
-      color: MaterialStateProperty.resolveWith(
+      color: WidgetStateProperty.resolveWith(
         (Set states) {
           return null;
         },
@@ -224,15 +224,15 @@ class _TableDataSource extends DataTableSource {
           Tooltip(
             message: 'È OBBLIGATORIO',
             child: survey.required
-                ? Row(
-                    children: const [
+                ? const Row(
+                    children: [
                       Text('SI'),
                       SizedBox(width: 10),
                       Icon(Icons.lock_outline),
                     ],
                   )
-                : Row(
-                    children: const [
+                : const Row(
+                    children: [
                       Text('NO'),
                       SizedBox(width: 10),
                       Icon(Icons.lock_open_outlined),

@@ -9,14 +9,14 @@ class LoginEmailResetPasswordView extends StatelessWidget {
   final ViewModel landingModel;
 
   const LoginEmailResetPasswordView({
-    Key? key,
+    super.key,
     required this.landingModel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     var scale = context.read<AppData>().scale;
-    final onBackgroundColor = Theme.of(context).colorScheme.onBackground;
+    final onBackgroundColor = Theme.of(context).colorScheme.onSurface;
     var formKey = GlobalKey<FormState>();
     var emailController = TextEditingController();
 

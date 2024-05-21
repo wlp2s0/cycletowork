@@ -11,11 +11,11 @@ class TrackingCounterView extends StatelessWidget {
   final Key dismissKey;
 
   const TrackingCounterView({
-    Key? key,
+    super.key,
     required this.counter,
     required this.setCounter,
     required this.dismissKey,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,9 @@ class TrackingCounterView extends StatelessWidget {
               'assets/icons/timer.svg',
               height: 24.0 * scale,
               width: 24.0 * scale,
-              color: actionColor,
+              theme: SvgTheme(
+                currentColor: actionColor,
+              ),
             ),
             SizedBox(
               width: 6.0 * scale,
@@ -88,7 +90,9 @@ class TrackingCounterView extends StatelessWidget {
               'assets/icons/bike.svg',
               height: 24.0 * scale,
               width: 24.0 * scale,
-              color: actionColor,
+              theme: SvgTheme(
+                currentColor: actionColor,
+              ),
             ),
           ],
         ),

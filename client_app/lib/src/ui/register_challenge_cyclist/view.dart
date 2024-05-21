@@ -3,14 +3,13 @@ import 'package:cycletowork/src/data/app_data.dart';
 import 'package:cycletowork/src/data/company.dart';
 import 'package:cycletowork/src/theme.dart';
 import 'package:cycletowork/src/ui/register_challenge/view_model.dart';
-import 'package:filter_list/filter_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RegisterChallengCyclistView extends StatefulWidget {
-  const RegisterChallengCyclistView({Key? key}) : super(key: key);
+  const RegisterChallengCyclistView({super.key});
 
   @override
   State<RegisterChallengCyclistView> createState() =>
@@ -65,7 +64,7 @@ class _RegisterChallengCyclistViewState
           splashRadius: 25.0,
           icon: Icon(
             Icons.arrow_back_ios,
-            color: colorScheme.onBackground,
+            color: colorScheme.onSurface,
             size: 20,
           ),
           onPressed: () => viewModel.gotoSelectType(),
@@ -203,13 +202,13 @@ class _RegisterChallengCyclistViewState
                               }
                             },
                             style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
+                              shape: WidgetStateProperty.all<
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
-                              overlayColor: MaterialStateProperty.all<Color>(
+                              overlayColor: WidgetStateProperty.all<Color>(
                                 color.withOpacity(0.20),
                               ),
                             ),
@@ -318,17 +317,18 @@ class _RegisterChallengCyclistViewState
                             color: colorSchemeExtension.textDisabled,
                           ),
                         ),
+                        /*
                         onTap: () async {
                           await FilterListDialog.display<Company>(
                             context,
                             hideSelectedTextCount: true,
                             barrierDismissible: true,
                             hideCloseIcon: false,
-                            backgroundColor: colorScheme.background,
+                            backgroundColor: colorScheme.surface,
                             themeData: FilterListThemeData(context).copyWith(
                               borderRadius: 15.0 * scale,
                               headerTheme: HeaderThemeData(
-                                closeIconColor: colorScheme.onBackground,
+                                closeIconColor: colorScheme.onSurface,
                                 searchFieldBorderRadius: 15.0 * scale,
                                 searchFieldInputBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
@@ -336,13 +336,13 @@ class _RegisterChallengCyclistViewState
                                   ),
                                 ),
                                 searchFieldHintText: 'Cerca la tua azienda ...',
-                                backgroundColor: colorScheme.background,
+                                backgroundColor: colorScheme.surface,
                                 searchFieldBackgroundColor:
                                     colorScheme.brightness == Brightness.dark
                                         ? Colors.grey[800]
                                         : null,
                               ),
-                              backgroundColor: colorScheme.background,
+                              backgroundColor: colorScheme.surface,
                               choiceChipTheme: ChoiceChipThemeData(
                                 selectedBackgroundColor: color,
                                 backgroundColor:
@@ -368,7 +368,7 @@ class _RegisterChallengCyclistViewState
                                 ),
                                 backgroundColor:
                                     colorScheme.brightness == Brightness.light
-                                        ? colorScheme.background
+                                        ? colorScheme.surface
                                         : Colors.black,
                                 controlButtonTheme: ControlButtonThemeData(
                                   primaryButtonBackgroundColor: color,
@@ -409,6 +409,7 @@ class _RegisterChallengCyclistViewState
                                 .setCompanyName(listSelectedCompany.first.name);
                           }
                         },
+                        */
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Seleziona la tua azienda';
@@ -604,13 +605,12 @@ class _RegisterChallengCyclistViewState
                         }
                       },
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                             colorScheme.secondary),
                       ),
                       child: AutoSizeText(
@@ -633,8 +633,7 @@ class _RegisterChallengCyclistViewState
                     child: OutlinedButton(
                       onPressed: viewModel.gotoSelectType,
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                             side: BorderSide(
@@ -642,10 +641,10 @@ class _RegisterChallengCyclistViewState
                             ),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           colorScheme.onSecondary,
                         ),
-                        overlayColor: MaterialStateProperty.all<Color>(
+                        overlayColor: WidgetStateProperty.all<Color>(
                           colorScheme.secondary.withOpacity(0.40),
                         ),
                       ),

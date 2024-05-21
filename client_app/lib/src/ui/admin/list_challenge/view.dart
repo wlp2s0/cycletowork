@@ -9,7 +9,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class AdminListChallengeView extends StatefulWidget {
-  const AdminListChallengeView({Key? key}) : super(key: key);
+  const AdminListChallengeView({super.key});
 
   @override
   State<AdminListChallengeView> createState() => _AdminListChallengeViewState();
@@ -257,7 +257,7 @@ class _TableDataSource extends DataTableSource {
       challenge.stopTime,
     );
     return DataRow.byIndex(
-      color: MaterialStateProperty.resolveWith(
+      color: WidgetStateProperty.resolveWith(
         (Set states) {
           return null;
         },
@@ -326,15 +326,15 @@ class _TableDataSource extends DataTableSource {
           Tooltip(
             message: 'EDIZIONE FIAB',
             child: challenge.fiabEdition
-                ? Row(
-                    children: const [
+                ? const Row(
+                    children: [
                       Text('SI'),
                       SizedBox(width: 10),
                       Icon(Icons.check_circle_outline),
                     ],
                   )
-                : Row(
-                    children: const [
+                : const Row(
+                    children: [
                       Text('NO'),
                       SizedBox(width: 10),
                       Icon(Icons.unpublished_outlined),
@@ -346,15 +346,15 @@ class _TableDataSource extends DataTableSource {
           Tooltip(
             message: 'È OBBL. SONDAGGIO',
             child: challenge.requiredSurvey
-                ? Row(
-                    children: const [
+                ? const Row(
+                    children: [
                       Text('SI'),
                       SizedBox(width: 10),
                       Icon(Icons.check_circle_outline),
                     ],
                   )
-                : Row(
-                    children: const [
+                : const Row(
+                    children: [
                       Text('NO'),
                       SizedBox(width: 10),
                       Icon(Icons.unpublished_outlined),
@@ -366,15 +366,15 @@ class _TableDataSource extends DataTableSource {
           Tooltip(
             message: 'È OBBL. Selezione Azienda',
             child: challenge.requiredCompany
-                ? Row(
-                    children: const [
+                ? const Row(
+                    children: [
                       Text('SI'),
                       SizedBox(width: 10),
                       Icon(Icons.check_circle_outline),
                     ],
                   )
-                : Row(
-                    children: const [
+                : const Row(
+                    children: [
                       Text('NO'),
                       SizedBox(width: 10),
                       Icon(Icons.unpublished_outlined),
@@ -386,15 +386,15 @@ class _TableDataSource extends DataTableSource {
           Tooltip(
             message: 'È OBBL. NOME E COGNOME',
             child: challenge.requiredNameLastName
-                ? Row(
-                    children: const [
+                ? const Row(
+                    children: [
                       Text('SI'),
                       SizedBox(width: 10),
                       Icon(Icons.check_circle_outline),
                     ],
                   )
-                : Row(
-                    children: const [
+                : const Row(
+                    children: [
                       Text('NO'),
                       SizedBox(width: 10),
                       Icon(Icons.unpublished_outlined),
@@ -406,15 +406,15 @@ class _TableDataSource extends DataTableSource {
           Tooltip(
             message: 'È OBBL. EMAIL AZIENDALE',
             child: challenge.requiredBusinessEmail
-                ? Row(
-                    children: const [
+                ? const Row(
+                    children: [
                       Text('SI'),
                       SizedBox(width: 10),
                       Icon(Icons.check_circle_outline),
                     ],
                   )
-                : Row(
-                    children: const [
+                : const Row(
+                    children: [
                       Text('NO'),
                       SizedBox(width: 10),
                       Icon(Icons.unpublished_outlined),
@@ -426,15 +426,15 @@ class _TableDataSource extends DataTableSource {
           Tooltip(
             message: 'È OBBL. VERIFICA EMAIL AZIENDALE',
             child: challenge.requiredBusinessEmailVerification
-                ? Row(
-                    children: const [
+                ? const Row(
+                    children: [
                       Text('SI'),
                       SizedBox(width: 10),
                       Icon(Icons.check_circle_outline),
                     ],
                   )
-                : Row(
-                    children: const [
+                : const Row(
+                    children: [
                       Text('NO'),
                       SizedBox(width: 10),
                       Icon(Icons.unpublished_outlined),
@@ -446,15 +446,15 @@ class _TableDataSource extends DataTableSource {
           Tooltip(
             message: 'È OBBL. INDIRIZZO AZIENDALE',
             child: challenge.requiredWorkAddress
-                ? Row(
-                    children: const [
+                ? const Row(
+                    children: [
                       Text('SI'),
                       SizedBox(width: 10),
                       Icon(Icons.check_circle_outline),
                     ],
                   )
-                : Row(
-                    children: const [
+                : const Row(
+                    children: [
                       Text('NO'),
                       SizedBox(width: 10),
                       Icon(Icons.unpublished_outlined),

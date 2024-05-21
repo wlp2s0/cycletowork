@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:badges/badges.dart' as b;
+import 'package:badges/badges.dart' as badges;
 import 'package:cycletowork/src/data/user.dart';
 import 'package:cycletowork/src/theme.dart';
 import 'package:cycletowork/src/ui/admin/dashboard/view_model.dart';
@@ -11,7 +11,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 class AdminListUserView extends StatefulWidget {
-  const AdminListUserView({Key? key}) : super(key: key);
+  const AdminListUserView({super.key});
 
   @override
   State<AdminListUserView> createState() => _AdminListUserViewState();
@@ -227,7 +227,7 @@ class _TableDataSource extends DataTableSource {
   DataRow getRow(int index) {
     final user = data[index];
     return DataRow.byIndex(
-      color: MaterialStateProperty.resolveWith(
+      color: WidgetStateProperty.resolveWith(
         (Set states) {
           return null;
         },
@@ -241,8 +241,9 @@ class _TableDataSource extends DataTableSource {
         DataCell(
           Tooltip(
             message: user.verified ? 'VERIFICATO' : '',
-            child: b.Badge(
-              badgeColor: Colors.blueAccent,
+            child: badges.Badge(
+              badgeStyle:
+                  const badges.BadgeStyle(badgeColor: Colors.blueAccent),
               showBadge: user.verified,
               badgeContent: const Icon(
                 Icons.verified_outlined,

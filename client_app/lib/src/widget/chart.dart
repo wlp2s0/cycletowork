@@ -1,15 +1,14 @@
-import 'package:cycletowork/src/data/app_data.dart';
-import 'package:cycletowork/src/data/chart_data.dart';
-import 'package:cycletowork/src/theme.dart';
-import 'package:flutter/material.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
 import 'dart:math';
 
-import 'package:provider/provider.dart';
+import 'package:cycletowork/src/data/chart_data.dart';
+import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:intl/intl.dart';
+
 
 enum ChartType {
   co2,
-  distant,
+  distance,
   speed,
   altitude,
 }
@@ -26,77 +25,210 @@ class Chart extends StatelessWidget {
   final ChartScaleType scaleType;
   final double height;
   final List<ChartData> chartData;
+
   const Chart({
-    Key? key,
+    super.key,
     this.height = 130,
     required this.type,
     required this.chartData,
     required this.scaleType,
-  }) : super(key: key);
+  });
 
+  get minXValue =>
+      chartData.isNotEmpty ? chartData.map((point) => point.x).reduce(min) : 0;
+
+  get maxXValue =>
+      chartData.isNotEmpty ? chartData.map((point) => point.x).reduce(max) : 0;
+
+  get maxYValue =>
+      chartData.isNotEmpty ? chartData.map((point) => point.y).reduce(max) : 0;
+
+  FlGridData get gridData =>
+      const FlGridData(show: true, drawVerticalLine: false);
+
+  LineTouchData get lineTouchData1 => LineTouchData(
+        handleBuiltInTouches: true,
+        touchTooltipData: LineTouchTooltipData(
+          getTooltipColor: (touchedSpot) => Colors.blueGrey.withOpacity(0.8),
+        ),
+      );
+
+  String formatXAxis(double value, TitleMeta meta) {
+    // x axis is time values
+    if (type == ChartType.speed || type == ChartType.altitude) {
+      if (value % meta.appliedInterval == 0) {
+        var date = DateTime.fromMillisecondsSinceEpoch(value.ceil());
+        return DateFormat.Hm().format(date);
+      }
+      return "";
+    }
+    switch (scaleType) {
+      case ChartScaleType.week:
+        if (value == 0) {
+          return "L";
+        } else if (value == 1) {
+          return "M";
+        } else if (value == 2) {
+          return "M";
+        } else if (value == 3) {
+          return "G";
+        } else if (value == 4) {
+          return "V";
+        } else if (value == 5) {
+          return "S";
+        } else if (value == 6) {
+          return "D";
+        }
+        return "L";
+
+      case ChartScaleType.month:
+        return 'S ${(value + 1).toStringAsFixed(0)}';
+
+      case ChartScaleType.year:
+        if (value == 0) {
+          return "G";
+        } else if (value == 1) {
+          return "F";
+        } else if (value == 2) {
+          return "M";
+        } else if (value == 3) {
+          return "A";
+        } else if (value == 4) {
+          return "M";
+        } else if (value == 5) {
+          return "G";
+        } else if (value == 6) {
+          return "L";
+        } else if (value == 7) {
+          return "A";
+        } else if (value == 8) {
+          return "S";
+        } else if (value == 9) {
+          return "O";
+        } else if (value == 10) {
+          return "N";
+        } else if (value == 11) {
+          return "D";
+        }
+        return "";
+      case ChartScaleType.time:
+        return value.toString();
+    }
+  }
+
+  FlTitlesData get titlesData => FlTitlesData(
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            reservedSize: 32,
+            getTitlesWidget: (value, meta) {
+              var formattedValue = formatXAxis(value, meta);
+              return SideTitleWidget(
+                axisSide: meta.axisSide,
+                child: Text(
+                  formattedValue,
+                ),
+              );
+            },
+          ),
+        ),
+        rightTitles: const AxisTitles(
+          sideTitles: SideTitles(showTitles: false),
+        ),
+        topTitles: const AxisTitles(
+          sideTitles: SideTitles(showTitles: false),
+        ),
+        leftTitles: const AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            reservedSize: 48,
+          ),
+        ),
+      );
+
+  FlBorderData get borderData => FlBorderData(
+        show: true,
+        border: const Border(
+          bottom: BorderSide(color: Colors.blue, width: 4),
+          left: BorderSide(color: Colors.transparent),
+          right: BorderSide(color: Colors.transparent),
+          top: BorderSide(color: Colors.transparent),
+        ),
+      );
+
+  List<FlSpot> get spots =>
+      chartData.map((element) => FlSpot(element.x, element.y)).toList();
+
+  LineChartBarData get lineBarsData1 => LineChartBarData(
+        isCurved: false,
+        color: Colors.black,
+        barWidth: 4,
+        isStrokeCapRound: true,
+        dotData: const FlDotData(show: false),
+        belowBarData: BarAreaData(show: false),
+        spots: spots,
+      );
+
+  LineChartData get data => LineChartData(
+        lineTouchData: lineTouchData1,
+        gridData: gridData,
+        titlesData: titlesData,
+        borderData: borderData,
+        lineBarsData: [lineBarsData1],
+      );
+
+  Widget leftTitleWidgets(double value, TitleMeta meta) {
+    const style = TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize: 14,
+    );
+
+    if (maxYValue == 0) {
+      return Container();
+    }
+
+    var text = "${value.floor()}";
+
+    return Text(text, style: style, textAlign: TextAlign.center);
+  }
+
+  SideTitles leftTitles() => SideTitles(
+        getTitlesWidget: leftTitleWidgets,
+        showTitles: true,
+        // interval: 1,
+        reservedSize: 40,
+      );
+
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
+      aspectRatio: 1.23,
+      child: Stack(
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: LineChart(
+                    data,
+                    curve: Curves.ease,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+/*
   @override
   Widget build(BuildContext context) {
     var scale = context.read<AppData>().scale;
     var maxValue =
         chartData.isNotEmpty ? chartData.map((x) => x.y).reduce(max) : 0;
-    final formatterY = charts.BasicNumericTickFormatterSpec(
-      (value) {
-        switch (scaleType) {
-          case ChartScaleType.week:
-            if (value == 0) {
-              return "L";
-            } else if (value == 1) {
-              return "M";
-            } else if (value == 2) {
-              return "M";
-            } else if (value == 3) {
-              return "G";
-            } else if (value == 4) {
-              return "V";
-            } else if (value == 5) {
-              return "S";
-            } else if (value == 6) {
-              return "D";
-            }
-            return "L";
-
-          case ChartScaleType.month:
-            return 'S ${(value! + 1).toStringAsFixed(0)}';
-
-          case ChartScaleType.year:
-            if (value == 0) {
-              return "G";
-            } else if (value == 1) {
-              return "F";
-            } else if (value == 2) {
-              return "M";
-            } else if (value == 3) {
-              return "A";
-            } else if (value == 4) {
-              return "M";
-            } else if (value == 5) {
-              return "G";
-            } else if (value == 6) {
-              return "L";
-            } else if (value == 7) {
-              return "A";
-            } else if (value == 8) {
-              return "S";
-            } else if (value == 9) {
-              return "O";
-            } else if (value == 10) {
-              return "N";
-            } else if (value == 11) {
-              return "D";
-            }
-
-            return "L";
-
-          case ChartScaleType.time:
-            return value.toString();
-        }
-      },
-    );
 
     if (type == ChartType.speed || type == ChartType.altitude) {
       return SizedBox(
@@ -228,4 +360,5 @@ class Chart extends StatelessWidget {
       ),
     ];
   }
+  */
 }

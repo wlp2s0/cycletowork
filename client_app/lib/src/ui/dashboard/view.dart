@@ -32,7 +32,7 @@ import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, TargetPlatform;
 
 class DashboardView extends StatelessWidget {
-  const DashboardView({Key? key}) : super(key: key);
+  const DashboardView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -197,7 +197,7 @@ class DashboardView extends StatelessWidget {
                   actions: [
                     AppAvatar(
                       userImageUrl:
-                          AppData.user != null ? AppData.user!.photoURL : null,
+                          AppData.user?.photoURL,
                       userType: AppData.user != null
                           ? AppData.user!.userType
                           : UserType.other,
@@ -315,7 +315,9 @@ class DashboardView extends StatelessWidget {
         body: 'Per poter usare Cycle2Work devi attivarlo nelle impostazioni.',
         confirmLabel: 'Ho capito',
       ).show();
-      await AppSettings.openDeviceSettings();
+      await AppSettings.openAppSettings(
+        type: AppSettingsType.location,
+      );
       return false;
     }
     final isIos = defaultTargetPlatform == TargetPlatform.iOS;
@@ -373,12 +375,12 @@ class DashboardView extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => Navigator.pop(context),
                   style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       colorScheme.secondary,
                     ),
                   ),
@@ -405,7 +407,9 @@ class DashboardView extends StatelessWidget {
               'Per poter usare Cycle2Work è necessario che tu ci dia il permesso di rilevare la tua posizione. Puoi farlo nelle impostazioni di sistema.',
           confirmLabel: 'Ho capito',
         ).show();
-        await AppSettings.openLocationSettings();
+        await AppSettings.openAppSettings(
+          type: AppSettingsType.location,
+        );
         return false;
       }
       if (permissionStatus == PermissionStatus.restricted) {
@@ -418,7 +422,9 @@ class DashboardView extends StatelessWidget {
               'Per poter usare al meglio Cycle2Work è necessario abilitare il rilevamento preciso della posizione. Puoi farlo nelle impostazioni di sistema.',
           confirmLabel: 'Ho capito',
         ).show();
-        await AppSettings.openLocationSettings();
+        await AppSettings.openAppSettings(
+          type: AppSettingsType.location,
+        );
         return false;
       }
 
@@ -446,7 +452,9 @@ class DashboardView extends StatelessWidget {
                 'Per poter usare Cycle2Work è necessario che tu ci dia il permesso di rilevare la tua posizione. Puoi farlo nelle impostazioni di sistema.',
             confirmLabel: 'Ho capito',
           ).show();
-          await AppSettings.openLocationSettings();
+          await AppSettings.openAppSettings(
+            type: AppSettingsType.location,
+          );
           return false;
         }
         if (permissionStatus == PermissionStatus.restricted) {
@@ -459,7 +467,9 @@ class DashboardView extends StatelessWidget {
                 'Per poter usare al meglio Cycle2Work è necessario abilitare il rilevamento preciso della posizione. Puoi farlo nelle impostazioni di sistema.',
             confirmLabel: 'Ho capito',
           ).show();
-          await AppSettings.openLocationSettings();
+          await AppSettings.openAppSettings(
+            type: AppSettingsType.location,
+          );
           return false;
         }
 
@@ -545,12 +555,12 @@ class DashboardView extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => Navigator.pop(context),
                   style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       colorScheme.secondary,
                     ),
                   ),
@@ -581,7 +591,9 @@ class DashboardView extends StatelessWidget {
       body: '',
       confirmLabel: 'Ho capito',
     ).show();
-    await AppSettings.openLocationSettings();
+    await AppSettings.openAppSettings(
+      type: AppSettingsType.location,
+    );
     return false;
   }
 }

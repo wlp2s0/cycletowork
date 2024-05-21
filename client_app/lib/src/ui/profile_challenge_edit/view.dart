@@ -11,9 +11,9 @@ class ProfileChallengeEditView extends StatefulWidget {
   final ChallengeRegistry challengeRegistry;
 
   const ProfileChallengeEditView({
-    Key? key,
+    super.key,
     required this.challengeRegistry,
-  }) : super(key: key);
+  });
 
   @override
   State<ProfileChallengeEditView> createState() =>

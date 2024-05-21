@@ -14,7 +14,7 @@ class SliderButton extends StatelessWidget {
   final Key dismissKey;
 
   const SliderButton({
-    Key? key,
+    super.key,
     required this.rightWidget,
     required this.leftWidget,
     this.baseColor = Colors.black87,
@@ -22,7 +22,7 @@ class SliderButton extends StatelessWidget {
     this.highlightedColor = Colors.white,
     required this.onDismissed,
     required this.dismissKey,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

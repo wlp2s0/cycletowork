@@ -18,7 +18,7 @@ class AppAvatar extends StatelessWidget {
   final bool isAdmin;
 
   const AppAvatar({
-    Key? key,
+    super.key,
     required this.userType,
     this.loading = false,
     this.userImageUrl,
@@ -30,7 +30,7 @@ class AppAvatar extends StatelessWidget {
     this.progressStrokeWidth = 3.0,
     required this.visible,
     this.isAdmin = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

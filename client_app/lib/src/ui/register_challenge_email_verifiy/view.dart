@@ -7,7 +7,7 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:provider/provider.dart';
 
 class RegisterChallengEmailVerifyView extends StatefulWidget {
-  const RegisterChallengEmailVerifyView({Key? key}) : super(key: key);
+  const RegisterChallengEmailVerifyView({super.key});
 
   @override
   State<RegisterChallengEmailVerifyView> createState() =>
@@ -44,7 +44,7 @@ class _RegisterChallengEmailVerifyViewState
           splashRadius: 25.0,
           icon: Icon(
             Icons.arrow_back_ios,
-            color: colorScheme.onBackground,
+            color: colorScheme.onSurface,
             size: 20,
           ),
           onPressed: () => !emailIsVerified
@@ -193,13 +193,12 @@ class _RegisterChallengEmailVerifyViewState
                       onPressed:
                           emailIsVerified ? viewModel.registerChallenge : null,
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           emailIsVerified
                               ? colorScheme.secondary
                               : colorSchemeExtension.textDisabled
@@ -232,8 +231,7 @@ class _RegisterChallengEmailVerifyViewState
                               : viewModel.gotoChampionRegistrationData
                           : null,
                       style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                             side: BorderSide(
@@ -241,13 +239,13 @@ class _RegisterChallengEmailVerifyViewState
                             ),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           !emailIsVerified
                               ? colorScheme.onSecondary
                               : colorSchemeExtension.textDisabled
                                   .withOpacity(0.12),
                         ),
-                        overlayColor: MaterialStateProperty.all<Color>(
+                        overlayColor: WidgetStateProperty.all<Color>(
                           colorScheme.secondary.withOpacity(0.40),
                         ),
                       ),

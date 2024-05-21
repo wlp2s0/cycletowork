@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:cycletowork/src/utility/convert.dart';
 
 class DepartmentClassificationView extends StatefulWidget {
-  const DepartmentClassificationView({Key? key}) : super(key: key);
+  const DepartmentClassificationView({super.key});
 
   @override
   State<DepartmentClassificationView> createState() =>
@@ -282,7 +282,6 @@ class _Card extends StatelessWidget {
   final Color color;
 
   const _Card({
-    Key? key,
     required this.ranking,
     required this.title,
     required this.subtitle,
@@ -290,7 +289,7 @@ class _Card extends StatelessWidget {
     required this.isRankingCo2,
     required this.selected,
     required this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -305,7 +304,7 @@ class _Card extends StatelessWidget {
       height: 70.0 * scale,
       color: selected
           ? colorScheme.secondary.withOpacity(0.08)
-          : colorScheme.background,
+          : colorScheme.surface,
       child: Column(
         children: [
           SizedBox(

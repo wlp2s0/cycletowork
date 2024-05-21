@@ -14,7 +14,7 @@ class RankingSlider extends StatelessWidget {
   final bool isFirst;
 
   const RankingSlider({
-    Key? key,
+    super.key,
     required this.percent,
     required this.maxValue,
     required this.value,
@@ -23,7 +23,7 @@ class RankingSlider extends StatelessWidget {
     required this.maxValueWidget,
     required this.valueWidget,
     required this.isFirst,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +105,7 @@ class RankingSlider extends StatelessWidget {
                         width: 30 * scale,
                         height: 30 * scale,
                         decoration: BoxDecoration(
-                          color: colorScheme.background,
+                          color: colorScheme.surface,
                           shape: BoxShape.circle,
                         ),
                         child: Padding(
@@ -122,7 +122,7 @@ class RankingSlider extends StatelessWidget {
                         child: Text(
                           '--',
                           style: textTheme.bodySmall!.copyWith(
-                            color: colorScheme.background,
+                            color: colorScheme.surface,
                           ),
                         ),
                       ),
@@ -146,7 +146,7 @@ class RankingSlider extends StatelessWidget {
                       width: 30 * scale,
                       height: 30 * scale,
                       decoration: BoxDecoration(
-                        color: colorScheme.background,
+                        color: colorScheme.surface,
                         shape: BoxShape.circle,
                       ),
                       child: Padding(

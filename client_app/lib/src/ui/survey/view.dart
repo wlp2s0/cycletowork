@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SurveyView extends StatefulWidget {
-  const SurveyView({Key? key}) : super(key: key);
+  const SurveyView({super.key});
 
   @override
   State<SurveyView> createState() => _SurveyViewState();
@@ -36,7 +36,7 @@ class _SurveyViewState extends State<SurveyView> {
           splashRadius: 25.0 * scale,
           icon: Icon(
             Icons.arrow_back_ios,
-            color: colorScheme.onBackground,
+            color: colorScheme.onSurface,
             size: 20 * scale,
           ),
           onPressed: () => Navigator.of(context).pop(),
@@ -257,13 +257,13 @@ class _SurveyViewState extends State<SurveyView> {
                         }
                       : null,
                   style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0 * scale),
                       ),
                     ),
                     backgroundColor: saveButtonIsEnabled
-                        ? MaterialStateProperty.all<Color>(
+                        ? WidgetStateProperty.all<Color>(
                             colorScheme.secondary,
                           )
                         : null,

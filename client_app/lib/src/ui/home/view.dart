@@ -16,7 +16,7 @@ import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -157,13 +157,13 @@ class _HomeViewState extends State<HomeView> {
                 maxHeight: 168.0 * scale + listActivityHeight,
                 minHeight: 30.0 * scale,
                 defaultPanelState: PanelState.OPEN,
-                color: Theme.of(context).colorScheme.background,
+                color: Theme.of(context).colorScheme.surface,
                 boxShadow: const [],
                 slideDirection: SlideDirection.DOWN,
                 panelBuilder: (sc) => Column(
                   children: <Widget>[
                     Container(
-                      color: Theme.of(context).colorScheme.background,
+                      color: Theme.of(context).colorScheme.surface,
                       height: listActivityHeight,
                       child: ListView(
                         controller: _controller,
@@ -210,7 +210,7 @@ class _HomeViewState extends State<HomeView> {
                           ),
                           if (dashboardModel.uiState.loading)
                             Container(
-                              color: Theme.of(context).colorScheme.background,
+                              color: Theme.of(context).colorScheme.surface,
                               padding:
                                   EdgeInsets.symmetric(horizontal: 20 * scale),
                               child: const Center(

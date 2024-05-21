@@ -11,10 +11,10 @@ class AdminDetailsUser extends StatelessWidget {
   final User userInfo;
 
   const AdminDetailsUser({
-    Key? key,
+    super.key,
     required this.user,
     required this.userInfo,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +133,8 @@ class AdminDetailsUser extends StatelessWidget {
                     Tooltip(
                       message: verified ? 'VERIFICATO' : '',
                       child: b.Badge(
-                        badgeColor: Colors.blueAccent,
+                        badgeStyle:
+                            const b.BadgeStyle(badgeColor: Colors.blueAccent),
                         position: b.BadgePosition.bottomEnd(end: 15.0),
                         showBadge: verified,
                         badgeContent: const Icon(
