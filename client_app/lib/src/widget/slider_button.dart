@@ -82,6 +82,10 @@ class SliderButton extends StatelessWidget {
               ),
             ),
           ),
+          /*
+          Align(
+            alignment: Alignment.center,
+            child:*/
           Dismissible(
             dismissThresholds: const {
               DismissDirection.startToEnd: 0.35,
@@ -89,9 +93,22 @@ class SliderButton extends StatelessWidget {
             },
             key: dismissKey,
             onDismissed: onDismissed,
-            child: FloatingActionButton(
-              backgroundColor: color,
-              onPressed: null,
+            child: Align(
+              alignment: Alignment.center,
+              child: FloatingActionButton(
+                backgroundColor: color,
+                onPressed: null,
+                shape: CircleBorder(),
+              ),
+              // child: ElevatedButton(
+              // onPressed: null,
+              // style: ButtonStyle(
+              // backgroundColor: WidgetStateProperty.all(
+              // color,
+              // ),
+              // ),
+              // child: Text(""),
+              // ),
             ),
           ),
         ],
