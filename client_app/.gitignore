@@ -44,8 +44,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-# firebase_options.dart are safe to commit, ref: https://firebase.google.com/docs/projects/api-keys#api-keys-for-firebase-are-different
-# /lib/firebase_options.dart
 # Recaptcha site key is pubblic
 # .env
 android/app/google-services.json
