@@ -1,4 +1,4 @@
-package com.monodra.cycletowork;
+package it.fiabitalia.cycle2work;
 
 import androidx.test.rule.ActivityTestRule;
 import dev.flutter.plugins.integration_test.FlutterTestRunner;
