@@ -44,7 +44,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-/lib/firebase_options.dart
+# firebase_options.dart are safe to commit, ref: https://firebase.google.com/docs/projects/api-keys#api-keys-for-firebase-are-different
+# /lib/firebase_options.dart
 .env
 android/app/google-services.json
 ios/firebase_app_id_file.json
